@@ -1,0 +1,4 @@
+bcdedit /set hypervisorlaunchtype off
+(VMware)
+bcdedit /set hypervisorlaunchtype auto
+(docker)
