@@ -28,13 +28,14 @@
 具体的修改方法如下:
 找到/usr/lib/python2.7/dist-packages/这个目录, 这个目录下有两个地方需要改:, 一个rosdep2, 一个rosdistro. 
 这两个地方下面有几个.py文件里定义了Url, 把那个Url里面的域名修改一下就可以了. 这几个URL的位置如下: 
-\1. rosdistro下的`__init__.py`里定义了一个常量叫`DEFAULT_INDEX_URL`
-\2. rosdistro下`github.py`下有两个函数, 一个`package_xml_in_parents`里面的`url`这个变量
-\3. 还是这个文件下有个`_get_url_contents(url)`里面也是有个叫`url`的变量
-\4. rosdep下有三个
-  \1. gbpdistro_support.py的`FURTER_GBPDISTRO_URL`
-  \2. rep3.py的REP3_TARGETS_URL
-  \3. sources_list.py的`DEFAULT_SOURCES_LIST_URL`
+
+1. rosdistro下的`__init__.py`里定义了一个常量叫`DEFAULT_INDEX_URL`
+2. rosdistro下`github.py`下有两个函数, 一个`package_xml_in_parents`里面的`url`这个变量
+3. 还是这个文件下有个`_get_url_contents(url)`里面也是有个叫`url`的变量
+4. rosdep下有三个
+   1. gbpdistro_support.py的`FURTER_GBPDISTRO_URL`
+   2. rep3.py的`REP3_TARGETS_URL`
+   3.  sources_list.py的`DEFAULT_SOURCES_LIST_URL`
 
 如果你找到这几个文件, 就可以看见这几个url都是https://raw.githubusercontent.com/xxxxxx的, 把里面的raw.guthubusercontent.com改成我的镜像mirrors.vankyle.cn就可以了
 
