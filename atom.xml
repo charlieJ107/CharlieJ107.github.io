@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Vankyle</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-02-21T04:28:40.782Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Charlie J</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小米路由器不安装客户端的访问方法</title>
+    <link href="http://yoursite.com/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html"/>
+    <id>http://yoursite.com/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html</id>
+    <published>2020-02-12T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="小米路由器不安装客户端的访问方法"><a href="#小米路由器不安装客户端的访问方法" class="headerlink" title="小米路由器不安装客户端的访问方法"></a>小米路由器不安装客户端的访问方法</h1><ol><li>win10禁用了一个安全策略, 导致小米路由器的路由盘没办法访问. </li><li>调整这个策略的得放在<strong>本地组策略编辑器</strong>, 打开的方式是在<strong>运行</strong>里输入<code>gpedit.msc</code>.</li><li>找到<strong>计算机配置→管理模板→网络→Lanman工作站</strong>，把里面的“<strong>启用不安全的来宾登陆</strong>”项状态改为已启用, 即可访问</li><li>访问结束后, 记得关闭这个选项. 确保安全</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;小米路由器不安装客户端的访问方法&quot;&gt;&lt;a href=&quot;#小米路由器不安装客户端的访问方法&quot; class=&quot;headerlink&quot; title=&quot;小米路由器不安装客户端的访问方法&quot;&gt;&lt;/a&gt;小米路由器不安装客户端的访问方法&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;win10禁用了
+      
+    
+    </summary>
+    
+    
+      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+    
+    
+      <category term="System" scheme="http://yoursite.com/tags/System/"/>
+    
+      <category term="Win10" scheme="http://yoursite.com/tags/Win10/"/>
+    
+      <category term="Config" scheme="http://yoursite.com/tags/Config/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于我们这个机器人队</title>
+    <link href="http://yoursite.com/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html"/>
+    <id>http://yoursite.com/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html</id>
+    <published>2020-01-07T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<p>TUF到底是什么样的一群人</p><a id="more"></a><h3 id="关于我们这个机器人队"><a href="#关于我们这个机器人队" class="headerlink" title="关于我们这个机器人队"></a>关于我们这个机器人队</h3><h4 id="一"><a href="#一" class="headerlink" title="一"></a>一</h4><p>​    首先希望大家明白一点, 机器人并不是某个单一领域的事情, 而是一个高度综合, 学科交叉, 涉猎广泛的一个项目, 以至于独立成为了一个学科叫做<strong>机器人学</strong>(Robotics). 这个领域涉猎如此之广, 以至于单一的计算机, 或智能, 或自动化, 或软件工程, 或电子, 都不能独当一面地完成一个机器人比赛的全部工作. </p><p>​    其次, 至少以我个人的经历来看, 我对这个领域了解得越多, 学习得越深入, 越觉得这个领域知识树之广袤高深, 难以遍历.</p><p>​    而我们这样一个队伍, 在全国范围内, 实在是十分年轻的一个队伍, 以至于我们即将开展的很多工作, 既是在开创开创我们的道路, 也是在追赶其他队伍的步伐. 因此, 无论未来我们这个队伍的命运如何, 我都希望大家能够对我们即将开展的工作, 以及即将面对和学习的知识保有一颗敬畏之心, 正是那一番谦逊和求知的热情, 才是我们这个团队能够前进和进步的动力. </p><p>​    但值得庆幸的是, 我们这样一个队伍生来就带有工程师的光环, 在这样一个集体中我们不仅仅是一个”职业考生”, 更是用我们手握的各种知识和工具去解决实际问题的工程师. 我们在这样一个环境里真正地会将大家所学应用到实际中, 并在此基础上, 接触某些领域内比较高深的知识, 那些你们当前阶段, 乃至整个本科阶段都不会讲的知识, 那些老师们上课漏掉了的知识. </p><p>​    正如我所说, 我们所面对的是一整棵知识树, 我们也许不能将其遍历, 但我们可以在这个过程中, 尽可能多摘取一些果实. </p><h4 id="二"><a href="#二" class="headerlink" title="二"></a>二</h4><p>​    中国的学生从小都非常擅长一件事——考试。</p><p>​    老师和家长一直都告诉我们要好好学习，却从没有告诉我们什么是学习，学习和记忆的区别是什么，如何将学习学来的东西应用于我们的实践中。这也不奇怪，在过去的十多年里，同学们的生活是被一场一场考试分割开来的，你如果现在回想起你过去十数年的人生，无非就是这么几个阶段：上小学以前，考中学以前，中考以前，高考以前……让我们的这群孩子去用自己少有人生经历去面对人生中的诸多选择，真的是一件可恨又可悲的事情。</p><p>​    我们如今将大家招募过来并聚集在一起, 不仅是与大家分享工程师的光环, 抑或是跟大家共同完成一个机器人队的使命, 更是通过我们的方式, 帮助大家从考试这件事本身挣脱出来, 开始思考我们学到的东西会如何应用在我们的实际工程中, 并且通过理论去指导实践, 帮助我们在实践中能够以更高的效率实现我们的工作. </p><p>​    你们的老师也许告诉过你们C语言需要经过编译器编译才能运行, 但老师们未必告诉过你们常用的Code::Blocks使用的是GCC的Windows版本Min-GW, 也未必会告诉你们GCC-7默认使用的是C++14而GCC-5使用的是C++11. 老师们也许教过你们在Code::Blocks里点一下绿色的三角外加一个齿轮就可以让你的程序跑起来, 但未必告诉过你们要在Repository里面建立一个<code>Build</code>文件夹并在里面使用<code>cmake</code>来编译大型工程. 老师们也许告诉过你们如何求一个矩阵的特征值和特征向量, 但你们也许还不知道我们的机器人在进行状态估计的时候就是借用特征值和特征向量来解决各种各样的问题. </p><p>​    你们的老师也许会在大一的第二学期教你们如何用贝叶斯公式求一个事件的条件概率, 而我们就是要用同样的方式去估计机器人所处的状态和下个时刻机器人的决策有多大可能实现目的. </p><p>​    因此, 我需要提前跟大家说明白的是, 机器人的这些事情不会给你的考试成绩有立竿见影的提升, 也不会为你争取到更多的自习, 刷题的时间. 但我们希望能够做到把一群”不奢望, 不绝望, 永远怀着热望”的人聚集在一起, 并以不同的角度去理解我们的考试知识. </p><p>​    </p><h3 id="三"><a href="#三" class="headerlink" title="三"></a>三</h3><p>​    如果你问我, 来这个机器人队能收获什么, 我真的没办法像很多学生会部门那样跟大家保证会有什么样的收获, 我们不是一个官僚部门, 我们只是一支创新实验团队. </p><p>​    我们真的没有什么学霸带你飞, 最多也就是带你在大一大二就学完一大半的本科课程而已; </p><p>​    我们也没有什么保研出国秘籍, 顶天了就是给你一个世界冠军的荣耀而已;</p><p>​    我们也没有什么期末考试通关宝典, 也就是一群人一起相互讲题组队学习而已;</p><p>​    我们也没有什么团队福利, 也就是大家一起出去比个赛, 嗨一顿, 再回来接着干活儿而已;</p><p>​    我们也没有什么可以装逼的东西, 也就是别人一辈子都未必会接触到的知识, 和工程师的头衔而已. </p><p>​    作为一个年轻的团队, 我们几乎什么都没有, 我们所拥有的和即将拥有的, 都是我们一同创造的. </p><h3 id="四"><a href="#四" class="headerlink" title="四"></a>四</h3><p>​    说到底, 我们还是一个团队. </p><p>​    团队就意味着需要合作, 需要实现全局最优解, 而非局部最优解, 意味着需要共同面对困难, 共同承担风险, 也意味着共同分享荣誉, 共同分享收获. </p><p>​    我们不仅希望你足够牛X, 还希望你能够融入我们这个团队中, 为团队贡献力量的同时, 也在团队中成长. 我们即希望你能够听从指挥, 也希望你能够坚持自己的想法, 在必要的时候敢于提出问题, 敢于挑战权威, 敢于<strong>据理</strong>力争. </p><p>​    我们希望你能够按时按量完成任务, 同时能够”知识改变命运”, 用自己的聪明才智找到高效轻松地解决问题的方法. 我们希望你能够对不合理的要求说不, 并给出更好的办法. 我们还希望你能够帮助团队中的伙伴, 共同成长和进步.</p><p>​    我们希望你能够承担起作为一个团队成员的责任, 不求你挑大梁, 但求你千万别来划水. </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;TUF到底是什么样的一群人&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Publicity" scheme="http://yoursite.com/categories/Publicity/"/>
+    
+    
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+    
+      <category term="Robotics" scheme="http://yoursite.com/tags/Robotics/"/>
+    
+      <category term="xmu.edu.cn" scheme="http://yoursite.com/tags/xmu-edu-cn/"/>
+    
+      <category term="xmu-tuf" scheme="http://yoursite.com/tags/xmu-tuf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(也许是)全世界第一份在RaspberryPi4上安装ROS-melodic的教程</title>
+    <link href="http://yoursite.com/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html"/>
+    <id>http://yoursite.com/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html</id>
+    <published>2019-10-31T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程"><a href="#也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程" class="headerlink" title="( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程"></a>( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程</h1><h5 id="How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10"><a href="#How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10" class="headerlink" title="How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10"></a>How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10</h5><a id="more"></a><h3 id="失踪人口回归"><a href="#失踪人口回归" class="headerlink" title="失踪人口回归"></a>失踪人口回归</h3><p>长期以来被学校和各种各样其他的事物压榨得奄奄一息, 一度把自己弄到抑郁. 但经过这一番奋斗, 虽然依然压力很大, 但还是希望能够留下点东西, 不然学完了就学完了, 姑且不说久不用了会不会忘, 重要的是, 总需要一点东西逼迫自己写点东西. 于是, 还是希望每周能抽出一点时间来写点东西. </p><h3 id="源起"><a href="#源起" class="headerlink" title="源起"></a>源起</h3><p>​    想做一个情绪机器人, 灵感来源于超能陆战队里的大白. 但是大白的这个形象从硬件上涉及很多问题, 根据曾灿辉的说法, 几乎不可能做到. 心血来潮想要参加微软的IC, 所以就想着, 要不做个球吧. 叫做Ba Ba’ll. 名字起得很随便, 总之, 这玩意儿是一个机器人. </p><p>​    基本的思想就是树莓派作为大脑, 控制高级功能, 再用一个Arduino来作为小脑, 控制运动. RaspberryPi4刚刚出来, 4GB的RAM真的很爽. 不过官方的Raspberrybian还是一个32位的操作系统, 而且作为一个教育为导向的操作系统, 总觉得太Low了. ROS也并没有为了这个版本的debian设计过. 虽然一样没有为1910的Ubuntu设计, 但好歹也是Ubuntu. </p><p>​    不过Ubuntu还是有问题. 首先, 18.04 的LTS是不支持RP4的, 这玩意儿出来的时候RP4还没出来. 如果强行刷进去的话会直接没办法进系统. 第二, 即使是19.10 (eoan) 的Ubuntu server, 还是有个惊天bug导致了整个USB不能用. 因为这个USB的芯片需要一些有特殊要求的内存空间, 但是这个内存空间没有被好好划给芯片, 被系统其他部分占用了. 这个东西已经被一个内核补丁给搞定了, 但是在我的板子上解决这个问题还要重新编译内核, 这个可能可以留给以后去解决这个问题. </p><p>​    于是就有了我们这个并不完美的环境: 一块RP4, 一根网线 ( 用来连接SSH访问命令行) , 以及电源. 外带一个预安装版本的Ubuntu server 19.10 的arm64版本. </p><h3 id="正片开始"><a href="#正片开始" class="headerlink" title="正片开始"></a>正片开始</h3><p>​    在RP4上安装ROS有以下几个基本问题:</p><ol><li>ROS是为Ubuntu设计的, 其他的发行版只是顺便支持一下. 所以Raspberrybian是别想了, 乖乖按照Ubuntu官网上的指南安装Ubuntu. 在此之前, 很多人都是在RP上装Ubuntu mate. 这个mate虽然也是基于Ubuntu, 但是难保你这个定制的桌面环境会给你整出什么幺蛾子. 当然作为一个愿意折腾的人虽然我们不怕幺蛾子, 但是第一这玩意儿很浪费时间, 第二, 你想想一旦出了幺蛾子, 你觉不觉得Ubuntu server 的相关资料要比一个小众的mate要多得多? </li><li>ROS的预编译版本是为x86的设备编译的, 虽然也有arm64的版本, 但无论是哪个预编译版本, 都只支持bionic(18.04). 这就意味着仅有19.10能支持的树莓派也别想用预编译版本了, 只能从源码编译. </li><li>正如之前所说, ROS的依赖关系检查和安装是由一个专门的工具 (<code>rorsdep</code>) 来完成的. 这玩意儿是python写的, 而Cpython的解释器是c写的. 虽然自己从源码编译理论上能够保证任何有GCC的平台就能用上ROS, 然鹅这个愚蠢的<code>rosdep</code>根本不认识刚发布不久的19.10. 你在使用<code>rosdep</code>检查和处理依赖的时候会报一堆说不认识你这个OS版本. 这就意味着你只能自己找依赖. </li></ol><p>​    首先先记得换一下镜像源. 镜像源的问题已经老生常谈了. 网上有很多资料, 总的来说, 就是换掉<code>/etc/apt/source.list</code>里面的域名. 我原本以为这个应该是一个很简单那的东西, 但是我发现好多人根本不看版本, 直接上CSDN上面照抄, 结果一个1604的版本换了个1804的镜像源, 报了一堆错. </p><p>​    哦, 也有一堆人根本不知道镜像源是什么, 我原本以为机器人队质量会高一点, 没想到一堆人还不知道linux是啥…</p><p>​    嗯, 中国的高考制度让中国优秀的大学里充斥着90%的精通考试的学生, 但这群学生一旦遇到考试之外的东西, 完全不知道怎么下手. 而中国的大学为了保证这群学生不至于太惨, 只好调整自己的考试和考核模式, 即让考试考得好的人评价好, 而实际的工程能力和学习能力, who cares? 我非常理解这种举动, 因为大家都是这样上来的, 所有人都是既得利益者. 所以只能牺牲那极少数的, 工程OK但考试不强的, 来希图那三分之一考试比较好的人里面, 能够萌生出更极少数的, 工程能力强的人. </p><h3 id="官网上的能用的部分"><a href="#官网上的能用的部分" class="headerlink" title="官网上的能用的部分"></a>官网上的能用的部分</h3><ol><li><p>安装<code>bootstrap</code>依赖. </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-rosdep python-rosinstall-generator python-wstool python-rosinstall build-essential</span><br></pre></td></tr></table></figure></li><li><p>初始化 <code>rosdep</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rosdep init</span><br><span class="line">rosdep update</span><br></pre></td></tr></table></figure></li><li><p>创建<code>catkin</code>工作区</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/ros_catkin_ws</span><br><span class="line"><span class="built_in">cd</span> ~/ros_catkin_ws</span><br></pre></td></tr></table></figure></li><li><p>然后用<code>wstool</code>把源码下载下来</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rosinstall_generator desktop --rosdistro melodic --deps --tar &gt; melodic-desktop.rosinstall</span><br><span class="line">wstool init -j8 src melodic-desktop.rosinstall</span><br></pre></td></tr></table></figure><p>这里安装的是带桌面组件的ROS melodic. 可以根据需要选择其他版本, 也可以选择命令行, 不带桌面组件. 因为目前还处在开发阶段, 等到实际跑起来的时候就不需要桌面了, 直接上命令行的 Bare Bones 版本. </p></li></ol><p>​    好, 官网上能用的部分就到这儿了. 接下来按照官网上的东西会出现各种各样的问题, 我们解决问题的漫漫长路也是从这里开始的.. </p><h3 id="解决依赖"><a href="#解决依赖" class="headerlink" title="解决依赖"></a>解决依赖</h3><p>​    到目前为止, 按照官网上的东西都能够正常跑通. 接下来就是要解决依赖的问题了. 官网上的命令是这样的:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rosdep install --from-paths src --ignore-src --rosdistro melodic -y</span><br></pre></td></tr></table></figure><p>到这里会报一堆错, 大概的意思就是劳资不认识你这个系统版本. 因为咱们这个系统是19.10, 它不认识是正常的. </p><p>​    这个时候我们可以先行找到一些 (有可能) 需要安装并且可以被安装的依赖, 简单来说, 看看上面告诉你什么包没找到, 就在<code>apt</code>里面安装这个包. </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-xxx -y</span><br></pre></td></tr></table></figure><p>当然, 你就算安装了这些包, 再次跑一边检查依赖的命令还是会报同样的错误, 也许缺的包少一些了, 但问题还没有被解决. </p><p>​    我在走这一步的时候, 先后尝试了很多种花式安装, 先是用<code>apt</code>安装了一遍, 又用<code>pip</code>安装了一遍, 但是还是没有解决这个问题, 索性就不去管他, 直接开始编译. </p><h3 id="踩完了坑之后的做法"><a href="#踩完了坑之后的做法" class="headerlink" title="踩完了坑之后的做法"></a>踩完了坑之后的做法</h3><p>​    如果你根本不关心我在这个过程当中遇到的艰难险阻和朴实无华却行之有效的调试方法, 你可以直接跑一遍接下来的命令, 然后直接开始编译. </p><p>​    首先是可以用<code>apt</code>或者<code>pip</code>直接安装的: </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev libeigen3-dev python-empy liblog4cxx-dev tinyxml-dev qt5-default python-pyqt5 python-lz4 python3-lz4 liburdfdom-dev libzip2 libogre-1.9.0-dev libogre-1.9.0v5  libyaml-cpp-dev libyaml-cpp0.6  libassimp-dev assimp-utils libassimp4 python-pyassimp python3-pyassimp  python-netifaces python3-netifaces</span><br></pre></td></tr></table></figure><p>然后就是有一个很尴尬的事情, 有些依赖我也不知道是哪个包出了问题, 所以索性就把所有有可能的包装上了. 我猜有一堆人不知道<code>apt</code>还有<code>apt search</code>这个命令的, 你可以试试用<code>apt search</code>一些缺的, 然后把看起来有用的都装上, 最后解决了这两个东西的依赖问题. 鉴于我也不知最后到底是哪个包起作用, 读者可以自己试着做一下. </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt search lz4</span><br><span class="line">apt search bzip2</span><br><span class="line">apt search opencv</span><br></pre></td></tr></table></figure><p>这里说一下, lz4我主要挑了一些介绍或者名字里面有ros和lz4的. 另外, bzip2应该就是libzip之类的库需要装, 所以可以不用把所有搜索出来的都装上, 有选择性地装上就可以了. </p><p>有一些东西需要自己下载源码下来编译. 在此之前, 请确保自己装了git 并且配置了全局用户名. 有些系统镜像(比如docker里面的那个)过于精简, 甚至连wget都没有. 不过考虑到这是树莓派而且这是Ubuntu Server, 所以应该这些都是有的. </p><p>​    首先是可以从GitHub上面clone 源码的</p><p>console_bridge</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/ros/console_bridge.git</span><br><span class="line"><span class="built_in">cd</span> console_bridge</span><br><span class="line">cmake .</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>gtenst</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libgtest-dev</span><br><span class="line">sudo apt-get install cmake <span class="comment"># install cmake</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src/gtest</span><br><span class="line">sudo cmake CMakeLists.txt</span><br><span class="line">sudo make</span><br></pre></td></tr></table></figure><p>tinyxml2</p><p>这个说一下, 早些年这玩意儿就是tinyxml, 后来更新了以后就是tinyxml2, tinyxml的库就没了. 但是不知道为啥这个ROS里面还有一些包用的还是旧版本的tinyxml, 值得庆幸的是旧版的tinyxml可以用<code>apt</code>安装, 所以也顺利解决了这个问题</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/leethomason/tinyxml2.git</span><br><span class="line"><span class="built_in">cd</span> tityxml.git</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>然后就是sip</p><p>这个涉及到一个很严肃的问题: python2 今年上半年停止支持了以后, pypi干脆连Python2的sip都不支持了. 所以这个本来可以用<code>pip</code>安装的东西, 到头来却要从源码编译</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.riverbankcomputing.com/static/Downloads/sip/4.19.19/sip-4.19.19tar.gz</span><br><span class="line">tar -xvfz sip-4.19.19.tar.gz</span><br><span class="line"><span class="built_in">cd</span> sip-4.19.19.tar.gz</span><br><span class="line">python configure.py</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>差不多就是这些了. </p><p>这个时候就可以放心大胆地继续跑官网的那个教程里面的make环节了</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./src/catkin/bin/catkin_make_isolated --install -DCMAKE_BUILD_TYPE=Release --install-space /opt/ros/melodic</span><br></pre></td></tr></table></figure><p>这个命令注意一下, 官网上的是没有最后那个<code>--instal-space</code>这个参数的. 这个参数主要是用来指定安装的地方, 我个人建议最好还是指定一下, 尽可能缩小不同平台之间的差距, 提高代码的可移植性. </p><p>然后就是, 为了能够获得与预编译版本相似的体验, 我个人建议不要依赖官网上的编译教程, 在最后设置环境的时候, 还是按照预编译安装的那个教程, 走这个命令: </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"source /opt/ros/melodic/setup.bash"</span> &gt;&gt; ~/.bashrc</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><p>​    到此为止, 整个ROS就安装好了. </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程&quot;&gt;&lt;a href=&quot;#也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程&quot; class=&quot;headerlink&quot; title=&quot;( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程&quot;&gt;&lt;/a&gt;( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程&lt;/h1&gt;&lt;h5 id=&quot;How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10&quot;&gt;&lt;a href=&quot;#How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10&quot; class=&quot;headerlink&quot; title=&quot;How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10&quot;&gt;&lt;/a&gt;How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="Tutorial" scheme="http://yoursite.com/categories/Tutorial/"/>
+    
+    
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910</title>
+    <link href="http://yoursite.com/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html"/>
+    <id>http://yoursite.com/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html</id>
+    <published>2019-10-31T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910"><a href="#Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910" class="headerlink" title="Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910"></a>Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910</h1><p>Install 1910</p><a id="more"></a><p>However, the mouse and keyboard , actually the whole USB port are useless.</p><p>Install ROS melodic from source as the tutorial on the wiki.ros.org/melodic/installation/ubuntu. </p><p>When resolving Dependencies:</p><p>Some dependencies not found in the repository for eoan. </p><p>That’s ok to set the official repository ros-latest.list to bionic. </p><p>Install the dependences manually one by one.</p><p>Build the catkin workspace. </p><p>“console bridge” problem:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git://github.com/ros/console_bridge.git</span><br><span class="line"><span class="built_in">cd</span> console_bridge</span><br><span class="line">cmake .</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>“boots lib” problem:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev</span><br></pre></td></tr></table></figure><p>“gtenst”problems:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">udo apt-get install libgtest-dev</span><br><span class="line">sudo apt-get install cmake <span class="comment"># install cmake</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src/gtest</span><br><span class="line">sudo cmake CMakeLists.txt</span><br><span class="line">sudo make</span><br></pre></td></tr></table></figure><p>eigen3 probrems</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libeigen3-dev</span><br></pre></td></tr></table></figure><p>no module named sigconfig </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://www.riverbankcomputing.com/static/Downloads/sip/4.19/sip-4.19.tar.gz</span><br><span class="line">tar -xvfz sip-4.19.tar.gz</span><br><span class="line"><span class="built_in">cd</span> sip-4.19.tar.gz</span><br><span class="line">python configure.py</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>empy:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-empy</span><br></pre></td></tr></table></figure><p>tinyxml2</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/leethomason/tinyxml2.git</span><br><span class="line"><span class="built_in">cd</span> tityxml.git</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>not found sudo LOG4CXX</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install liblog4cxx-dev</span><br></pre></td></tr></table></figure><p>tinyxml1</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tinyxml-dev</span><br></pre></td></tr></table></figure><p>tested: </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sudo apt-get install libfontconfig1-dev libdbus-1-dev libfreetype6-dev libudev-dev libicu-dev libsqlite3-dev libxslt1-dev libssl-dev libasound2-dev libavcodec-dev libavformat-dev libswscale-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev gstreamer-tools gstreamer0.10-plugins-good gstreamer0.10-plugins-bad libraspberrypi-dev libpulse-dev libx11-dev libglib2.0-dev libcups2-dev freetds-dev libsqlite0-dev libpq-dev libiodbc2-dev libmysqlclient-dev firebird-dev libpng12-dev libjpeg9-dev libgst-dev libxext-dev libxcb1 libxcb1-dev</span><br><span class="line">libx11-xcb1 libx11-xcb-dev libxcb-keysyms1 libxcb-keysyms1-dev libxcb-image0 libxcb-image0-dev libxcb-shm0 libxcb-shm0-dev libxcb-icccm4 libxcb-icccm4-dev libxcb-sync1 libxcb-sync-dev libxcb-render-util0 libxcb-render-util0-dev libxcb-xfixes0-dev libxrender-dev libxcb-shape0-dev libxcb-randr0-dev libxcb-glx0-dev libxi-dev libdrm-dev libssl-dev libxcb-xinerama0 libxcb-xinerama0-dev</span><br></pre></td></tr></table></figure><p>qt5-widgets</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qt5-default</span><br></pre></td></tr></table></figure><p>pyqt5</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-pyqt5</span><br></pre></td></tr></table></figure><p>‘SIP_NULLPTR’</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https:&#x2F;&#x2F;www.riverbankcomputing.com&#x2F;static&#x2F;Downloads&#x2F;sip&#x2F;4.19&#x2F;sip-4.49.tar.gz</span><br><span class="line">tar -xvfz sip-4.49.tar.gz</span><br><span class="line">cd sip-4.49.tar.gz</span><br><span class="line">python configure.py</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure><p>lz4</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python-lz4 python3-lz4</span><br></pre></td></tr></table></figure><p>it not use</p><p>try everything you can search in apt about lz4</p><p>seems lz4 and ros about would be work?</p><p>urdfdom_header:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt insatll liburdfdom-dev</span><br></pre></td></tr></table></figure><p>bzip2</p><p>try everything you can fine in <code>apt search</code> about bzip2</p><p>opencv</p><p>install everything about opencv, actually you will use it later them all. </p><p>“OGRE”</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libogre-1.9.0-dev libogre-1.9.0v5</span><br></pre></td></tr></table></figure><p>“yaml-cpp”</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libyaml-cpp-dev libyaml-cpp0.6</span><br></pre></td></tr></table></figure><p>asssmp:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install libassimp-dev assimp-utils libassimp4 python-pyassimp python3-pyassimp</span><br></pre></td></tr></table></figure><p>After installation:</p><p>roscore:</p><p>netiface</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install netifaces</span><br><span class="line"><span class="comment">#or</span></span><br><span class="line">sudo apt install python-netifaces python3-netifaces</span><br></pre></td></tr></table></figure><p>The main idea of debug the dependences is apt search the package name. </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910&quot;&gt;&lt;a href=&quot;#Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910&quot; class=&quot;headerlink&quot; title=&quot;Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910&quot;&gt;&lt;/a&gt;Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910&lt;/h1&gt;&lt;p&gt;Install 1910&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+    
+    
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ROS安装时的raw.gihubusercontent.com连不上咋办# 标题</title>
+    <link href="http://yoursite.com/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html"/>
+    <id>http://yoursite.com/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html</id>
+    <published>2019-10-31T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ROS安装时的raw-gihubusercontent-com连不上咋办"><a href="#ROS安装时的raw-gihubusercontent-com连不上咋办" class="headerlink" title="ROS安装时的raw.gihubusercontent.com连不上咋办"></a>ROS安装时的raw.gihubusercontent.com连不上咋办</h1><ol><li><p>连不上是因为一些众所周知的原因…</p></li><li><p>解决思路:</p><ol><li>科学上网</li><li>换一个能连上的</li></ol></li></ol><a id="more"></a><ol start="3"><li><p>我自己搭建了一个镜像, 简单来说, 你可以直接吧域名<code>raw.githubusercontent.com</code>改成<code>mirrors.vankyle.cn</code>, 其他的可以照原样. </p></li><li><p>修改的地方: 有以下几个</p><ol><li>rosdistro下的<code>__init__.py</code>里定义了一个常量叫<code>DEFAULT_INDEX_URL</code></li><li>rosdistro下<code>github.py</code>下有两个函数, 一个<code>package_xml_in_parents</code>里面的<code>url</code>这个变量</li><li>还是这个文件下有个<code>_get_url_contents(url)</code>里面也是有个叫<code>url</code>的变量</li><li>rosdep下有三个<ol><li>gbpdistro_support.py的<code>FURTER_GBPDISTRO_URL</code></li><li>rep3.py的REP3_TARGETS_URL</li><li>sources_list.py的<code>DEFAULT_SOURCES_LIST_URL</code></li></ol></li></ol><p>以上这几个地方的<code>raw.githubusercontent.com</code>全部改成mirrors.vankyle.cn就可以了</p></li></ol><p>报这个错是因为<a href="https://raw.githubusercontent.com/ros/rosdistro/这个的库里的raw文件没办法直接下载下来" target="_blank" rel="noopener">https://raw.githubusercontent.com/ros/rosdistro/这个的库里的raw文件没办法直接下载下来</a>, 那我们就直接把这个库clone到一个我们可以下载的地方就好了.<br>所以我自己搭了一个镜像, 用起来有点麻烦, 但是可以解决问题. 简单来说, 就是把那个域名raw.githubusercontent.com改成我的镜像网址mirrors.vankyle.cn<br>具体的修改方法如下:<br>找到/usr/lib/python2.7/dist-packages/这个目录, 这个目录下有两个地方需要改:, 一个rosdep2, 一个rosdistro.<br>这两个地方下面有几个.py文件里定义了Url, 把那个Url里面的域名修改一下就可以了. 这几个URL的位置如下: </p><ol><li>rosdistro下的<code>__init__.py</code>里定义了一个常量叫<code>DEFAULT_INDEX_URL</code></li><li>rosdistro下<code>github.py</code>下有两个函数, 一个<code>package_xml_in_parents</code>里面的<code>url</code>这个变量</li><li>还是这个文件下有个<code>_get_url_contents(url)</code>里面也是有个叫<code>url</code>的变量</li><li>rosdep下有三个<ol><li>gbpdistro_support.py的<code>FURTER_GBPDISTRO_URL</code></li><li>rep3.py的<code>REP3_TARGETS_URL</code></li><li>sources_list.py的<code>DEFAULT_SOURCES_LIST_URL</code></li></ol></li></ol><p>如果你找到这几个文件, 就可以看见这几个url都是<a href="https://raw.githubusercontent.com/xxxxxx的" target="_blank" rel="noopener">https://raw.githubusercontent.com/xxxxxx的</a>, 把里面的raw.guthubusercontent.com改成我的镜像mirrors.vankyle.cn就可以了</p><p>提示: vim里面可以用:%s/被替换的内容/替换成的内容/g (g表示见到就替换, 全文都这样)来实现替换</p><p>毕竟是个人的土办法, 当然, 也可以科学x网, 或者换一个其他的靠谱的源. mirrors.vankyle.cn这个源是我自己搭建的, 可能不是很快, 但能用了. </p><p>仅供参考, 如果有帮助, 不胜荣幸. 如果有更好的办法, 欢迎讨论</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;ROS安装时的raw-gihubusercontent-com连不上咋办&quot;&gt;&lt;a href=&quot;#ROS安装时的raw-gihubusercontent-com连不上咋办&quot; class=&quot;headerlink&quot; title=&quot;ROS安装时的raw.gihubusercontent.com连不上咋办&quot;&gt;&lt;/a&gt;ROS安装时的raw.gihubusercontent.com连不上咋办&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;连不上是因为一些众所周知的原因…&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;解决思路:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;科学上网&lt;/li&gt;
+&lt;li&gt;换一个能连上的&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+    
+    
+      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+    
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World!</title>
+    <link href="http://yoursite.com/Other/Hello,%20World!.html"/>
+    <id>http://yoursite.com/Other/Hello,%20World!.html</id>
+    <published>2019-06-07T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello, World!"></a>Hello, World!</h1><p>​    大家好, 我是Charlie, 是这个博客的创作人和维护人。</p><a id="more"></a><p>​    这个博客创建并于2019年6月8日发布第一篇文章《Hello，world！》，这是这个博客的第一篇文章，用于致敬支持我搭建起这个博客的所有的知识的发现者和创造者。</p><p>​    这是我的个人博客，纵然到了今天，已经不再有多少人拥有和使用博客，但我仍然坚信，在信息高度快餐化、碎片化的今天，一篇篇经过了深思熟虑的，或技术，或思考的文章，更能够承载起属于人类智慧的力量。</p><p>​    在此之前，我曾在我的云服务器上运行了我的第一个网站，用于服务于我高中阶段所致力于创建和维护的社团。如今，我会从此开始，走向更远的地方。</p><p>​    感谢每一个陪伴和关注的人。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello, World!&quot;&gt;&lt;/a&gt;Hello, World!&lt;/h1&gt;&lt;p&gt;​    大家好, 我是Charlie, 是这个博客的创作人和维护人。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Other" scheme="http://yoursite.com/categories/Other/"/>
+    
+    
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年各大高校自主招生政策解读</title>
+    <link href="http://yoursite.com/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html"/>
+    <id>http://yoursite.com/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html</id>
+    <published>2019-06-07T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2019年各大高校自主招生政策解读"><a href="#2019年各大高校自主招生政策解读" class="headerlink" title="2019年各大高校自主招生政策解读"></a>2019年各大高校自主招生政策解读</h1><p> 2019年各大高校的自主招生工作正在进行, 目前已有半数高校已经发布了自主招生简章. 笔者作为曾经的自主招生的受益者 , 同时作为各位考生忠实的陪伴者, 在此对截止目前公布的各大高校的自主招生简章进行粗浅的解读, 仅供参考.</p><a id="more"></a><h3 id="进行自招的学校数量没有太大变化"><a href="#进行自招的学校数量没有太大变化" class="headerlink" title="进行自招的学校数量没有太大变化."></a>进行自招的学校数量没有太大变化.</h3><p>目前已经公布自主招生简章的学校包括但不限于北京科技大学, 北京化工大学, 北京邮电大学, 北京林业大学, 北京中医药大学, 北京师范大学, 北京语言大学, 中国传媒大学, 对外经贸大学, 武汉大学, 厦门大学, 中山大学, 中南大学, 中南财经政法大学等.  </p><p>​    根据阳光高考网的公示, 今年进行自主招生的学校较往年相比没有太大变化, 厦门大学, 武汉大学等往年较为热门的自招学校都发布了自己的招生简章. </p><h3 id="自招政策明显收紧"><a href="#自招政策明显收紧" class="headerlink" title="自招政策明显收紧"></a>自招政策明显收紧</h3><p>目前已经公布自招简章的学校当中, 大多数学校的招生政策都有较大调整, 主要呈现出以下几个特点:</p><ol><li><p>五大学科竞赛的成为唯一必要条件, 其他各大竞赛不再作为硬性条件. </p><p>绝大多数的学校在自招简章中都明确表示, 申请参加自招的考生应当在全国数学\物理\化学\生物\信息竞赛中, 获得省级赛区二等奖以上的奖项, 一些学校甚至要求全国三等甚至二等奖. 并且包括厦门大学, 中山大学, 武汉理工大学在内的多所学校都明确五大学科竞赛的奖项是唯一必要条件. 其他竞赛不再作为申请参加自招的条件. 也就是说, 在许多学校的自招中, 五大学科竞赛的奖项将成为唯一的”敲门砖”, 没有五大学科竞赛的获奖将在自招中被绝大多数学校拒之门外. </p></li><li><p>专利、论文不再作为申请的参考资料</p><p>许多学校都在自招简章中明确注明, 考生所取得的专利和论文发表不再作为申报材料. 也就是说, 专利和论文不再作为自招当中的加分项. 这可以说是杜绝了专利和论文造假的现象. </p></li><li><p>体测成绩将作为评审的重要参考</p><p>多个学校已经明确公布了考核方案, 其中体测作为一个重要考核项逐渐成为一个重要的参考. 多个学校已经明确注明, 体测成绩将作为考核的重要参考, 这也对考生的体质水平提出了更高要求. </p></li><li><p>降分幅度大幅收紧</p><p>多个学校的录取政策中, 基本上都要求考生达到高校在考生所在省份模拟投档线下20-50分, 一些曾经”一本线录取”等政策在今年各大高校的招生简章中消声觅迹. </p></li></ol><h3 id="自招政策的收紧带来的三大影响"><a href="#自招政策的收紧带来的三大影响" class="headerlink" title="自招政策的收紧带来的三大影响"></a>自招政策的收紧带来的三大影响</h3><p>可见, 今年的呃自主招生政策较往年相比大幅收紧, 对硬性指标的要求更加明确, 曾经常见的”其他具有学科特长和创新潜质”等条件都不再作为申请条件. 这将会给今年的自招带来至少以下几个影响. </p><ol><li><p>一些把自招当作捷径的考生将寸步难行</p><p>自招不再是一个用来逃避高考的捷径，自招的硬性指标要求更高，对于一些特定的学科特长考核更加严格。对于硬性指标不过硬，没有相应的学科竞赛获奖，或者体质不达标的考生，在这样的政策下将寸步难行。而希图利用一些无良中介机构进行论文和专利造假的考生，在这样的政策下也将举步维艰。</p></li><li><p>文科生在自招中的路越来越窄</p><p>许多高校的招生政策明确五大学科竞赛成为唯一的申请条件的情况下，除非文科生在这某个学科竞赛上有较强的学科特长的体现，否则将难以在这样明显偏向理科的门槛上取得优势。</p></li><li><p><strong>各种软性比赛，其他社会实践等软性能力的体现对后期竞争更为重要</strong></p><p>硬性指标门槛的提高，使得通过门槛的竞争者的差距急剧缩小，在基本的硬性指标的竞争力之外，各种软性指标的竞争力显得更为重要。在这种背景下，包括商赛、模联、机器人和各种社会实践活动，志愿者、义工活动等软性指标将成为重要的参考依据。当竞争者之间的其他条件相似的情况下，具有相关奖项和证书的竞争者无疑更具优势。</p></li></ol><p>总的来说, 在当今教育公平性愈显重要性的背景下, 自主招生作为高校在高考之外选拔具有特殊的学科特长和创新潜质的优秀学生的手段, 对申请者的基本学科能力等硬性指标和综合素质等软性指标都提出了更高的要求, 而作为申请者, 不仅要注重提高硬性指标以达到门槛, 更重要的是在综合素质和能力等软性指标上为自己积累竞争力, 才能以足够充分的准备面对新形势下的自主招生. </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2019年各大高校自主招生政策解读&quot;&gt;&lt;a href=&quot;#2019年各大高校自主招生政策解读&quot; class=&quot;headerlink&quot; title=&quot;2019年各大高校自主招生政策解读&quot;&gt;&lt;/a&gt;2019年各大高校自主招生政策解读&lt;/h1&gt;&lt;p&gt; 2019年各大高校的自主招生工作正在进行, 目前已有半数高校已经发布了自主招生简章. 笔者作为曾经的自主招生的受益者 , 同时作为各位考生忠实的陪伴者, 在此对截止目前公布的各大高校的自主招生简章进行粗浅的解读, 仅供参考.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Other" scheme="http://yoursite.com/categories/Other/"/>
+    
+    
+      <category term="自主招生" scheme="http://yoursite.com/tags/%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F/"/>
+    
+  </entry>
+  
+</feed>
