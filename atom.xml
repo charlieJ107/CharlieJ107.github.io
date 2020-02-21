@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://charliej107.github.io/"/>
   <updated>2020-02-21T04:28:40.782Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://charliej107.github.io/</id>
   
   <author>
     <name>Charlie J</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>小米路由器不安装客户端的访问方法</title>
-    <link href="http://yoursite.com/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html"/>
-    <id>http://yoursite.com/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html</id>
+    <link href="https://charliej107.github.io/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html"/>
+    <id>https://charliej107.github.io/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html</id>
     <published>2020-02-12T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -36,21 +36,21 @@
     </summary>
     
     
-      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+      <category term="Experience" scheme="https://CharlieJ107.github.io/categories/Experience/"/>
     
     
-      <category term="System" scheme="http://yoursite.com/tags/System/"/>
+      <category term="System" scheme="https://CharlieJ107.github.io/tags/System/"/>
     
-      <category term="Win10" scheme="http://yoursite.com/tags/Win10/"/>
+      <category term="Win10" scheme="https://CharlieJ107.github.io/tags/Win10/"/>
     
-      <category term="Config" scheme="http://yoursite.com/tags/Config/"/>
+      <category term="Config" scheme="https://CharlieJ107.github.io/tags/Config/"/>
     
   </entry>
   
   <entry>
     <title>关于我们这个机器人队</title>
-    <link href="http://yoursite.com/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html"/>
-    <id>http://yoursite.com/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html</id>
+    <link href="https://charliej107.github.io/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html"/>
+    <id>https://charliej107.github.io/Publicity/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%AA%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%98%9F.html</id>
     <published>2020-01-07T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -63,23 +63,23 @@
     </summary>
     
     
-      <category term="Publicity" scheme="http://yoursite.com/categories/Publicity/"/>
+      <category term="Publicity" scheme="https://CharlieJ107.github.io/categories/Publicity/"/>
     
     
-      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+      <category term="ROS" scheme="https://CharlieJ107.github.io/tags/ROS/"/>
     
-      <category term="Robotics" scheme="http://yoursite.com/tags/Robotics/"/>
+      <category term="Robotics" scheme="https://CharlieJ107.github.io/tags/Robotics/"/>
     
-      <category term="xmu.edu.cn" scheme="http://yoursite.com/tags/xmu-edu-cn/"/>
+      <category term="xmu.edu.cn" scheme="https://CharlieJ107.github.io/tags/xmu-edu-cn/"/>
     
-      <category term="xmu-tuf" scheme="http://yoursite.com/tags/xmu-tuf/"/>
+      <category term="xmu-tuf" scheme="https://CharlieJ107.github.io/tags/xmu-tuf/"/>
     
   </entry>
   
   <entry>
     <title>(也许是)全世界第一份在RaspberryPi4上安装ROS-melodic的教程</title>
-    <link href="http://yoursite.com/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html"/>
-    <id>http://yoursite.com/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html</id>
+    <link href="https://charliej107.github.io/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html"/>
+    <id>https://charliej107.github.io/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html</id>
     <published>2019-10-31T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -92,21 +92,21 @@
     </summary>
     
     
-      <category term="Tutorial" scheme="http://yoursite.com/categories/Tutorial/"/>
+      <category term="Tutorial" scheme="https://CharlieJ107.github.io/categories/Tutorial/"/>
     
     
-      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+      <category term="ROS" scheme="https://CharlieJ107.github.io/tags/ROS/"/>
     
-      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://CharlieJ107.github.io/tags/Ubuntu/"/>
     
-      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
+      <category term="Raspberry Pi" scheme="https://CharlieJ107.github.io/tags/Raspberry-Pi/"/>
     
   </entry>
   
   <entry>
     <title>Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910</title>
-    <link href="http://yoursite.com/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html"/>
-    <id>http://yoursite.com/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html</id>
+    <link href="https://charliej107.github.io/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html"/>
+    <id>https://charliej107.github.io/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html</id>
     <published>2019-10-31T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -119,21 +119,21 @@
     </summary>
     
     
-      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+      <category term="Experience" scheme="https://CharlieJ107.github.io/categories/Experience/"/>
     
     
-      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+      <category term="ROS" scheme="https://CharlieJ107.github.io/tags/ROS/"/>
     
-      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+      <category term="Ubuntu" scheme="https://CharlieJ107.github.io/tags/Ubuntu/"/>
     
-      <category term="Raspberry Pi" scheme="http://yoursite.com/tags/Raspberry-Pi/"/>
+      <category term="Raspberry Pi" scheme="https://CharlieJ107.github.io/tags/Raspberry-Pi/"/>
     
   </entry>
   
   <entry>
     <title>ROS安装时的raw.gihubusercontent.com连不上咋办# 标题</title>
-    <link href="http://yoursite.com/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html"/>
-    <id>http://yoursite.com/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html</id>
+    <link href="https://charliej107.github.io/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html"/>
+    <id>https://charliej107.github.io/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html</id>
     <published>2019-10-31T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -155,42 +155,19 @@
     </summary>
     
     
-      <category term="Experience" scheme="http://yoursite.com/categories/Experience/"/>
+      <category term="Experience" scheme="https://CharlieJ107.github.io/categories/Experience/"/>
     
     
-      <category term="ROS" scheme="http://yoursite.com/tags/ROS/"/>
+      <category term="ROS" scheme="https://CharlieJ107.github.io/tags/ROS/"/>
     
-      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World!</title>
-    <link href="http://yoursite.com/Other/Hello,%20World!.html"/>
-    <id>http://yoursite.com/Other/Hello,%20World!.html</id>
-    <published>2019-06-07T16:00:00.000Z</published>
-    <updated>2020-02-21T04:28:40.782Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello, World!"></a>Hello, World!</h1><p>​    大家好, 我是Charlie, 是这个博客的创作人和维护人。</p><a id="more"></a><p>​    这个博客创建并于2019年6月8日发布第一篇文章《Hello，world！》，这是这个博客的第一篇文章，用于致敬支持我搭建起这个博客的所有的知识的发现者和创造者。</p><p>​    这是我的个人博客，纵然到了今天，已经不再有多少人拥有和使用博客，但我仍然坚信，在信息高度快餐化、碎片化的今天，一篇篇经过了深思熟虑的，或技术，或思考的文章，更能够承载起属于人类智慧的力量。</p><p>​    在此之前，我曾在我的云服务器上运行了我的第一个网站，用于服务于我高中阶段所致力于创建和维护的社团。如今，我会从此开始，走向更远的地方。</p><p>​    感谢每一个陪伴和关注的人。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello, World!&quot;&gt;&lt;/a&gt;Hello, World!&lt;/h1&gt;&lt;p&gt;​    大家好, 我是Charlie, 是这个博客的创作人和维护人。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Other" scheme="http://yoursite.com/categories/Other/"/>
-    
-    
-      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+      <category term="Ubuntu" scheme="https://CharlieJ107.github.io/tags/Ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>2019年各大高校自主招生政策解读</title>
-    <link href="http://yoursite.com/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html"/>
-    <id>http://yoursite.com/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html</id>
+    <link href="https://charliej107.github.io/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html"/>
+    <id>https://charliej107.github.io/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html</id>
     <published>2019-06-07T16:00:00.000Z</published>
     <updated>2020-02-21T04:28:40.782Z</updated>
     
@@ -203,10 +180,33 @@
     </summary>
     
     
-      <category term="Other" scheme="http://yoursite.com/categories/Other/"/>
+      <category term="Other" scheme="https://CharlieJ107.github.io/categories/Other/"/>
     
     
-      <category term="自主招生" scheme="http://yoursite.com/tags/%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F/"/>
+      <category term="自主招生" scheme="https://CharlieJ107.github.io/tags/%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World!</title>
+    <link href="https://charliej107.github.io/Other/Hello,%20World!.html"/>
+    <id>https://charliej107.github.io/Other/Hello,%20World!.html</id>
+    <published>2019-06-07T16:00:00.000Z</published>
+    <updated>2020-02-21T04:28:40.782Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello, World!"></a>Hello, World!</h1><p>​    大家好, 我是Charlie, 是这个博客的创作人和维护人。</p><a id="more"></a><p>​    这个博客创建并于2019年6月8日发布第一篇文章《Hello，world！》，这是这个博客的第一篇文章，用于致敬支持我搭建起这个博客的所有的知识的发现者和创造者。</p><p>​    这是我的个人博客，纵然到了今天，已经不再有多少人拥有和使用博客，但我仍然坚信，在信息高度快餐化、碎片化的今天，一篇篇经过了深思熟虑的，或技术，或思考的文章，更能够承载起属于人类智慧的力量。</p><p>​    在此之前，我曾在我的云服务器上运行了我的第一个网站，用于服务于我高中阶段所致力于创建和维护的社团。如今，我会从此开始，走向更远的地方。</p><p>​    感谢每一个陪伴和关注的人。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello, World!&quot;&gt;&lt;/a&gt;Hello, World!&lt;/h1&gt;&lt;p&gt;​    大家好, 我是Charlie, 是这个博客的创作人和维护人。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Other" scheme="https://CharlieJ107.github.io/categories/Other/"/>
+    
+    
+      <category term="Hello" scheme="https://CharlieJ107.github.io/tags/Hello/"/>
     
   </entry>
   
