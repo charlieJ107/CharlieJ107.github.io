@@ -3,7 +3,7 @@
   <entry>
     <title>小米路由器不安装客户端的访问方法</title>
     <url>/Experience/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8D%E5%AE%89%E8%A3%85%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E8%AE%BF%E9%97%AE%E6%96%B9%E6%B3%95.html</url>
-    <content><![CDATA[<h1 id="小米路由器不安装客户端的访问方法"><a href="#小米路由器不安装客户端的访问方法" class="headerlink" title="小米路由器不安装客户端的访问方法"></a>小米路由器不安装客户端的访问方法</h1><ol>
+    <content><![CDATA[<ol>
 <li>win10禁用了一个安全策略, 导致小米路由器的路由盘没办法访问. </li>
 <li>调整这个策略的得放在<strong>本地组策略编辑器</strong>, 打开的方式是在<strong>运行</strong>里输入<code>gpedit.msc</code>.</li>
 <li>找到<strong>计算机配置→管理模板→网络→Lanman工作站</strong>，把里面的“<strong>启用不安全的来宾登陆</strong>”项状态改为已启用, 即可访问</li>
@@ -62,7 +62,7 @@
   <entry>
     <title>Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910</title>
     <url>/Experience/Crazy%20Install%20%20ROS%20melodic%20on%20Raspberry%20Pi%204%20with%20Ubuntu%20Server%201910.html</url>
-    <content><![CDATA[<h1 id="Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910"><a href="#Crazy-Install-ROS-melodic-on-Raspberry-Pi-4-with-Ubuntu-Server-1910" class="headerlink" title="Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910"></a>Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910</h1><p>Install 1910</p>
+    <content><![CDATA[<p>Install 1910</p>
 <a id="more"></a>
 
 <p>However, the mouse and keyboard , actually the whole USB port are useless.</p>
@@ -182,7 +182,7 @@
   <entry>
     <title>(也许是)全世界第一份在RaspberryPi4上安装ROS-melodic的教程</title>
     <url>/Tutorial/(%20%E4%B9%9F%E8%AE%B8%E6%98%AF%20)%20%E5%85%A8%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E4%BB%BD%E5%9C%A8RaspberryPi4%E4%B8%8A%E5%AE%89%E8%A3%85ROS%E7%9A%84%E6%95%99%E7%A8%8B.html</url>
-    <content><![CDATA[<h1 id="也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程"><a href="#也许是-全世界第一份在RaspberryPi4上安装ROS-melodic的教程" class="headerlink" title="( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程"></a>( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程</h1><h5 id="How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10"><a href="#How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10" class="headerlink" title="How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10"></a>How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10</h5><a id="more"></a>
+    <content><![CDATA[<h5 id="How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10"><a href="#How-to-install-ROS-Melodic-On-Raspberry-Pi-4-with-Ubuntu-Server-19-10" class="headerlink" title="How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10"></a>How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10</h5><a id="more"></a>
 
 <h3 id="失踪人口回归"><a href="#失踪人口回归" class="headerlink" title="失踪人口回归"></a>失踪人口回归</h3><p>长期以来被学校和各种各样其他的事物压榨得奄奄一息, 一度把自己弄到抑郁. 但经过这一番奋斗, 虽然依然压力很大, 但还是希望能够留下点东西, 不然学完了就学完了, 姑且不说久不用了会不会忘, 重要的是, 总需要一点东西逼迫自己写点东西. 于是, 还是希望每周能抽出一点时间来写点东西. </p>
 <h3 id="源起"><a href="#源起" class="headerlink" title="源起"></a>源起</h3><p>​    想做一个情绪机器人, 灵感来源于超能陆战队里的大白. 但是大白的这个形象从硬件上涉及很多问题, 根据曾灿辉的说法, 几乎不可能做到. 心血来潮想要参加微软的IC, 所以就想着, 要不做个球吧. 叫做Ba Ba’ll. 名字起得很随便, 总之, 这玩意儿是一个机器人. </p>
@@ -276,7 +276,7 @@
   <entry>
     <title>ROS安装时的raw.gihubusercontent.com连不上咋办# 标题</title>
     <url>/Experience/ROS%E5%AE%89%E8%A3%85%E6%97%B6%E7%9A%84raw.gihubusercontent.com%E8%BF%9E%E4%B8%8D%E4%B8%8A%E5%92%8B%E5%8A%9E.html</url>
-    <content><![CDATA[<h1 id="ROS安装时的raw-gihubusercontent-com连不上咋办"><a href="#ROS安装时的raw-gihubusercontent-com连不上咋办" class="headerlink" title="ROS安装时的raw.gihubusercontent.com连不上咋办"></a>ROS安装时的raw.gihubusercontent.com连不上咋办</h1><ol>
+    <content><![CDATA[<ol>
 <li><p>连不上是因为一些众所周知的原因…</p>
 </li>
 <li><p>解决思路:</p>
@@ -334,7 +334,7 @@
   <entry>
     <title>2019年各大高校自主招生政策解读</title>
     <url>/Other/2019%E5%B9%B4%E5%90%84%E5%A4%A7%E9%AB%98%E6%A0%A1%E8%87%AA%E4%B8%BB%E6%8B%9B%E7%94%9F%E6%94%BF%E7%AD%96%E8%A7%A3%E8%AF%BB.html</url>
-    <content><![CDATA[<h1 id="2019年各大高校自主招生政策解读"><a href="#2019年各大高校自主招生政策解读" class="headerlink" title="2019年各大高校自主招生政策解读"></a>2019年各大高校自主招生政策解读</h1><p> 2019年各大高校的自主招生工作正在进行, 目前已有半数高校已经发布了自主招生简章. 笔者作为曾经的自主招生的受益者 , 同时作为各位考生忠实的陪伴者, 在此对截止目前公布的各大高校的自主招生简章进行粗浅的解读, 仅供参考.</p>
+    <content><![CDATA[<p> 2019年各大高校的自主招生工作正在进行, 目前已有半数高校已经发布了自主招生简章. 笔者作为曾经的自主招生的受益者 , 同时作为各位考生忠实的陪伴者, 在此对截止目前公布的各大高校的自主招生简章进行粗浅的解读, 仅供参考.</p>
 <a id="more"></a>
 <h3 id="进行自招的学校数量没有太大变化"><a href="#进行自招的学校数量没有太大变化" class="headerlink" title="进行自招的学校数量没有太大变化."></a>进行自招的学校数量没有太大变化.</h3><p>目前已经公布自主招生简章的学校包括但不限于北京科技大学, 北京化工大学, 北京邮电大学, 北京林业大学, 北京中医药大学, 北京师范大学, 北京语言大学, 中国传媒大学, 对外经贸大学, 武汉大学, 厦门大学, 中山大学, 中南大学, 中南财经政法大学等.  </p>
 <p>​    根据阳光高考网的公示, 今年进行自主招生的学校较往年相比没有太大变化, 厦门大学, 武汉大学等往年较为热门的自招学校都发布了自己的招生简章. </p>
@@ -377,7 +377,7 @@
   <entry>
     <title>Hello World!</title>
     <url>/Other/Hello,%20World!.html</url>
-    <content><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello, World!"></a>Hello, World!</h1><p>​    大家好, 我是Charlie, 是这个博客的创作人和维护人。</p>
+    <content><![CDATA[<p>​    大家好, 我是Charlie, 是这个博客的创作人和维护人。</p>
 <a id="more"></a>
 
 <p>​    这个博客创建并于2019年6月8日发布第一篇文章《Hello，world！》，这是这个博客的第一篇文章，用于致敬支持我搭建起这个博客的所有的知识的发现者和创造者。</p>
