@@ -53,7 +53,7 @@
 示例代码:
 
 ```c
-#include <Stdio.h>
+#include <stdio.h>
 void interchange(int * u, int * v);
 
 int main(void)

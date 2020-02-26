@@ -1,3 +1,12 @@
+---
+title: ROS安装时的raw.gihubusercontent.com连不上咋办# 标题
+date: 2019/11/1 # 时间
+categories: # 分类
+- Experience
+tags: # 标签
+- ROS
+- Ubuntu
+---
 # ROS安装时的raw.gihubusercontent.com连不上咋办
 
 1. 连不上是因为一些众所周知的原因...
@@ -6,6 +15,8 @@
 
    1. 科学上网
    2. 换一个能连上的
+   
+<!--more-->
 
 3. 我自己搭建了一个镜像, 简单来说, 你可以直接吧域名`raw.githubusercontent.com`改成`mirrors.vankyle.cn`, 其他的可以照原样. 
 

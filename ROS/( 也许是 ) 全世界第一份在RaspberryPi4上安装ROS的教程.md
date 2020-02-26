@@ -1,6 +1,18 @@
+---
+title: (也许是)全世界第一份在RaspberryPi4上安装ROS-melodic的教程 # 标题
+date: 2019/11/1 # 时间
+categories: # 分类
+- Experience
+tags: # 标签
+- ROS
+- Ubuntu
+- Raspberry Pi
+---
 # ( 也许是 ) 全世界第一份在RaspberryPi4上安装ROS-melodic的教程
 
 ##### How to install ROS - Melodic On Raspberry Pi 4 with Ubuntu Server 19.10
+
+<!--more-->
 
 ### 失踪人口回归
 

@@ -1,7 +1,16 @@
+---
+title: 关于我们这个机器人队 # 标题
+date: 2020/1/8 # 时间
+categories: # 分类
+- Notes
+tags: # 标签
+- Python
+- web
+---
 # 使用Beautifulsoup进行html解析
 
 `beautifulsoup`是一个常用的html解析库, 这篇文章简单记录其使用方法
-
+<!--more-->
 ### beautifulsoup对象
 
 先来看一个例子
@@ -63,5 +72,3 @@ find(tag, attributes, recursive, text, keywords)
 ```
 
 如果`recursive`参数设置为`true`findAll 就会根据你的要求去查找标签参数的所有子标签，以及子 标签的子标签。如果 recursive 设置为 False，findAll 就只查找文档的一级标签。findAll 默认是支持递归查找的（recursive 默认值是 True）；
-
-这两个

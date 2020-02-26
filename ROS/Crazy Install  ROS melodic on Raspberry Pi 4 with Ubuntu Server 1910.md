@@ -1,8 +1,19 @@
+---
+title: Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910 # 标题
+date: 2019/11/1 # 时间
+categories: # 分类
+- Experience
+tags: # 标签
+- ROS
+- Ubuntu
+- Raspberry Pi
+---
 # Crazy Install  ROS melodic on Raspberry Pi 4 with Ubuntu Server 1910
 
 
 
 Install 1910
+<!--more--->
 
 However, the mouse and keyboard , actually the whole USB port are useless.
 
