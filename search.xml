@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>std::vector</title>
+    <url>/Other/std-vector.html</url>
+    <content><![CDATA[<p>今天做题的时候用到了<code>std::vector</code>, 这里记录一下，内容主要来自《C++标准库》这本书。</p>
+<a id="more"></a>
+
+<p>根据C++standard，vector是以dynamic array实现的。在使用之前需要包含头文件<code>&lt;vector&gt;</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="大小和容量"><a href="#大小和容量" class="headerlink" title="大小和容量"></a>大小和容量</h3><p>Vector本身效率很高，但代价是需要分配出更大的空间。所以相比起一些手动算法，在空间控制上可能没那么理想。</p>
+<p>想要获得当前vector内的元素个数，可以使用<code>size()</code>方法。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//std::vector&lt;int&gt; coll</span></span><br><span class="line">coll.<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure>
+
+<p>可以直接返回一个整数，其大小是这个vector内的元素个数。</p>
+<p>如果这个vector是空的，则<code>coll.empty()</code>会返回<code>true</code>。</p>
+<p>除此之外，还涉及一个问题就是一个vector的容量（Capacity）。特别是如果你需要使用频繁、大规模地使用Vector可以改变长度这个特性的话，尤其需要注意。因为vector在运行过程中可能会重新分配空间，这将导致地址发生变化，如果不做任何措施，原有的引用、指针和迭代器等都可能会失效。而且重新分配内存很耗时间。序偶一你需要好好考虑容量问题。</p>
+<p>​    你可以使用<code>reserve()</code>来保留适当的容量以避免因容量不够而重新分配内存：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">v.reserve(<span class="number">80</span>);<span class="comment">//reserve memroy for 80 elements</span></span><br></pre></td></tr></table></figure>
+
+<p>但vector不能像string那样用<code>reserve()</code>来减小容量。vector的容量不能缩减(但长度可以缩减)。如果给<code>reserve()</code>的参数小于当前容量，什么也不会发生。</p>
+<h3 id="几种比较常见的操作"><a href="#几种比较常见的操作" class="headerlink" title="几种比较常见的操作"></a>几种比较常见的操作</h3><p><code>c.empty()</code>: 返回是否为空</p>
+<p><code>c.size()</code>：返回元素个数</p>
+<p><code>c.max_size()</code>发挥元素个数之最大可能量</p>
+<p><code>c.assign(n, elem)</code>: 复制n个elem赋给C</p>
+<p><code>c.assign(begin, end)</code>: 将区间[begin, end)内的元素赋给c</p>
+<p><code>c.assign(initlist)</code>: 用初始值列表给c赋值</p>
+<p><code>c1.swap()</code>或<code>swap(c1, c2)</code>: 置换c1和c2的数据</p>
+<h4 id="访问操作"><a href="#访问操作" class="headerlink" title="访问操作"></a>访问操作</h4><p><code>c[index]</code>(不检查范围)或<code>c.at(index)</code>（检查范围）</p>
+<p><code>c.front()</code>返回首元素</p>
+<p><code>c.back()</code>返回末尾元素</p>
+<h3 id="迭代器相关"><a href="#迭代器相关" class="headerlink" title="迭代器相关"></a>迭代器相关</h3><p><code>c.begin()</code>, <code>c.end()</code>返回一个random-access iterator指向首、尾元素</p>
+<p><code>c.cbegin()</code>, <code>c.cend()</code> 返回一个const ramdom-access iterator指向首、尾元素</p>
+<p><code>c.rbegin()</code>, <code>c.rend()</code>, <code>c.crbegin()</code>, <code>c.crend()</code>返回反向迭代的首尾元素迭代器</p>
+<h4 id="利用迭代器的一些操作"><a href="#利用迭代器的一些操作" class="headerlink" title="利用迭代器的一些操作"></a>利用迭代器的一些操作</h4><p><code>c.push_back(elem)</code>: 附加一个elem拷贝于末尾</p>
+<p><code>c.pop_back()</code>: …上面的逆操作</p>
+<p><code>c.insert()</code>支持以下参数列表：</p>
+<p><code>pos, elem</code></p>
+<p><code>pos, n, elem</code></p>
+<p><code>pos, begin, end</code></p>
+<p><code>pos, initlist</code></p>
+<p><code>c.emplace(pos, args...)</code></p>
+<p><code>e.emplace_back(args...)</code></p>
+<p><code>c.erase(pos)</code>: 移除pos这个iterator上的元素</p>
+<p><code>e.erase(begin, end)</code>： 移除从begin到end中间所有的元素</p>
+<p>所以如果你想移除“与某个值相等”的元素，虽然vector没有直接提供，但是可以通过其他一些辅助函数来实现。比如，你可以通过下面这个语句将所有值为val的元素移除</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;//提供remove函数的声明</span></span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt; coll;</span><br><span class="line">...</span><br><span class="line"><span class="comment">//remove al elements with value val</span></span><br><span class="line">coll.erase(<span class="built_in">remove</span>(coll.<span class="built_in">begin</span>(), coll.<span class="built_in">end</span>(), val), coll.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
+
+<p>如果你想只删除值一样的第一个元素：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt; coll;</span><br><span class="line">...</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt;::iterator pos;</span><br><span class="line">pos=<span class="built_in">find</span>(coll.<span class="built_in">begin</span>(), coll.<span class="built_in">end</span>(), val);</span><br><span class="line"><span class="keyword">if</span>(pos!=coll.<span class="built_in">end</span>())</span><br><span class="line">&#123;</span><br><span class="line">    coll.erase(pos);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>###　关于Vector的异常处理</p>
+<p>除非用户自定义了新的异常，或者标准异常（比如<code>bad_alloc</code>), <code>c.at()</code>是唯一一个标准认可的可以抛出异常的函数. 其他的函数，基本都不会抛出异常，甚至标准还保证类似<code>push_back()</code>这样的方法绝对不会抛出异常。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+        <tag>libstd</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在多台机器上运行ROS-理论篇</title>
     <url>/Tutorial/Run-ROS-on-Multiple-Machines.html</url>
     <content><![CDATA[<p>​    由于仿真需要, 准备在同一个局域网内开多个容器进行多机协同演练. 这需要在一个局域网内把多个机器的节点链接起来. 查阅官网的教程, 记录如下, 之后可能会补一个实操篇, 记录自己的操作流程.</p>
+<a id="more"></a>
 <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>ROS设计的灵魂就在于其分布式计算。一个优秀的节点不需要考虑在哪台机器上运行，它允许实时分配计算量以最大化的利用系统资源。(有一个特例——驱动节点必须运行在跟硬件设备有物理连接的机器上）。在多个机器人上使用ROS是一件很简单的事，你只需要记住一下几点：  </p>
 <ul>
 <li>你只需要一个master，只要在一个机器上运行它就可以了。 </li>
