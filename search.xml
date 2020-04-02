@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Python 实现腾讯云动态域名解析</title>
+    <url>/Experience/Python-%E5%AE%9E%E7%8E%B0%E8%85%BE%E8%AE%AF%E4%BA%91%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.html</url>
+    <content><![CDATA[<p>历经千辛万苦，终于解决了腾讯云动态域名解析的问题。整个过程中，最麻烦的莫过于腾讯云本身的鉴权机制，因为要计算请求字符串，这个是个很麻烦的东西。这个故事告诉我们，如果想要安全，肯定要比不安全的方式麻烦很多。</p>
+<a id="more"></a>
+
+<h3 id="生成一个初始请求字符串"><a href="#生成一个初始请求字符串" class="headerlink" title="生成一个初始请求字符串"></a>生成一个初始请求字符串</h3><ol>
+<li><p>确定请求类型, 请求的目标, 供计算签名使用</p>
+</li>
+<li><p>计算签名</p>
+<p>计算签名使用的是HMAC-SHA256算法, 使用python自带的<code>hmac</code>, <code>hashlib</code> ,完成计算之后再用<code>base64</code>编码成16进制. 网上很多文章都是抄来抄去, 全是2.7版本的. 我亲自去研究了一下python3.6的文档. 两个文档的链接可以从这里找到: <a href="https://docs.python.org/3.6/library/hashlib.html" target="_blank" rel="noopener">hashlib</a>, <a href="https://docs.python.org/3.6/library/hmac.html" target="_blank" rel="noopener">hmac</a>, 最后用<a href="https://docs.python.org/3.6/library/base64.html" target="_blank" rel="noopener">base64</a>来进行编码. </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caculateSignature</span><span class="params">(SecretKey, requestString)</span>:</span></span><br><span class="line">    secret = SecretKey.encode(<span class="string">'utf-8'</span>)  <span class="comment">#  秘钥</span></span><br><span class="line">    data = requestString.encode(<span class="string">'utf-8'</span>)  <span class="comment">#  加密数据</span></span><br><span class="line">    signature = base64.b64encode(hmac.new(secret, data, digestmod=hashlib.sha256).digest())</span><br><span class="line">    <span class="keyword">return</span> signature</span><br></pre></td></tr></table></figure>
+
+<p>注意, 返回的字符串需要通过一个库解析成http请求想要的形式。</p>
+</li>
+<li><p>查询地区, 获得地区代码</p>
+<p>这里涉及到一个问题, 解析返回的<code>json</code>, 使用的是Python的<code>json</code>包, 文档在<a href="https://docs.python.org/3.6/library/json.html" target="_blank" rel="noopener">这里</a></p>
+</li>
+</ol>
+<h3 id="基本的动态解析逻辑"><a href="#基本的动态解析逻辑" class="headerlink" title="基本的动态解析逻辑"></a>基本的动态解析逻辑</h3><p>​    现在我们已经有一个可以用来计算请求字符串的函数了。换句话说，只要我们拿到想要请求的数据，只需要丢进这个函数里，就可以实现获得请求字符串，再直接调用<code>request</code>进行请求就可以了。</p>
+<p>​    那么现在的问题就是，我们用什么数据实现域名解析呢？</p>
+<p>​    所谓域名解析，就是把域名和IP做一个映射。比如我的<code>vankyle.cn</code>这个域名，需要跟我的网站的服务器的公网IP做一个映射，这样别人访问<code>vankyle.cn</code>这个域名的时候就会把请求导向我的服务器，由服务器实现请求的处理。</p>
+<p>​    其实逻辑很简单，大概像下面这样：</p>
+<ol>
+<li>查询API获取当前的本机IP</li>
+<li>与上次解析的IP做比较</li>
+<li>如果一样，说明IP没有变化，那就什么都不做，休眠起来，下次定时再运行</li>
+<li>如果不一样，说明IP变化了，那就用当前的IP生成一个更改解析的请求，然后调用API实现修改</li>
+<li>完成之后，退出程序休眠起来，过段时间再运行一次</li>
+</ol>
+<p>所以最后的代码是这样的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_solve</span><span class="params">()</span>:</span></span><br><span class="line">    ip=get_internet_ip()</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"./ip"</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        old_ip = f.read()</span><br><span class="line">    <span class="keyword">if</span> ip == old_ip:</span><br><span class="line">        print(<span class="string">"noupdate"</span>+<span class="string">"\nnew_ip:"</span>+ip+<span class="string">"\nold_ip:"</span>+old_ip)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        write_to_file(<span class="string">"./ip"</span>,ip)</span><br><span class="line">        result=update_record(ip)</span><br><span class="line">        <span class="keyword">if</span> result==<span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"域名解析更新成功！"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"失败, 返回码:"</span>, result)</span><br></pre></td></tr></table></figure>
+
+<p>这里还涉及到一个获取公网IP的问题, 只需要用request随便找个API请求一下就可以了. </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_internet_ip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> urlopen(<span class="string">'http://www.3322.org/dyndns/getip'</span>) <span class="keyword">as</span> response:</span><br><span class="line">        html = response.read()</span><br><span class="line">        ip = str(html, encoding=<span class="string">'utf-8'</span>).replace(<span class="string">"\n"</span>, <span class="string">""</span>)</span><br><span class="line">    <span class="keyword">return</span> ip</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Experience</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>Internet</tag>
+        <tag>Cloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>std::vector</title>
     <url>/Other/std-vector.html</url>
     <content><![CDATA[<p>今天做题的时候用到了<code>std::vector</code>, 这里记录一下，内容主要来自《C++标准库》这本书。</p>

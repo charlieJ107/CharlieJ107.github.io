@@ -6,7 +6,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    std::vector |  Vankyle
+    Python 实现腾讯云动态域名解析 |  Vankyle
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -32,7 +32,7 @@
   <div id="app">
     <main class="content">
       <section class="outer">
-  <article id="post-std-vector" class="article article-type-post" itemscope
+  <article id="post-Python-实现腾讯云动态域名解析" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -40,7 +40,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  std::vector
+  Python 实现腾讯云动态域名解析
 </h1>
   
 
@@ -49,10 +49,14 @@
 
     
     <div class="article-meta">
-      <a href="/Other/std-vector.html" class="article-date">
-  <time datetime="2020-03-03T10:50:03.000Z" itemprop="datePublished">2020-03-03</time>
+      <a href="/Experience/Python-%E5%AE%9E%E7%8E%B0%E8%85%BE%E8%AE%AF%E4%BA%91%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.html" class="article-date">
+  <time datetime="2020-04-02T11:57:39.000Z" itemprop="datePublished">2020-04-02</time>
 </a>
       
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Experience/">Experience</a>
+  </div>
+
       
       
 <div class="word_count">
@@ -60,7 +64,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">911字</span>
+            <span class="post-count">748字</span>
         </span>
     </span>
 
@@ -69,7 +73,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3分钟</span>
+            <span class="post-count">2分钟</span>
         </span>
     </span>
 </div>
@@ -96,57 +100,39 @@
       
 
       
-      <p>今天做题的时候用到了<code>std::vector</code>, 这里记录一下，内容主要来自《C++标准库》这本书。</p>
+      <p>历经千辛万苦，终于解决了腾讯云动态域名解析的问题。整个过程中，最麻烦的莫过于腾讯云本身的鉴权机制，因为要计算请求字符串，这个是个很麻烦的东西。这个故事告诉我们，如果想要安全，肯定要比不安全的方式麻烦很多。</p>
 <a id="more"></a>
 
-<p>根据C++standard，vector是以dynamic array实现的。在使用之前需要包含头文件<code>&lt;vector&gt;</code></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="生成一个初始请求字符串"><a href="#生成一个初始请求字符串" class="headerlink" title="生成一个初始请求字符串"></a>生成一个初始请求字符串</h3><ol>
+<li><p>确定请求类型, 请求的目标, 供计算签名使用</p>
+</li>
+<li><p>计算签名</p>
+<p>计算签名使用的是HMAC-SHA256算法, 使用python自带的<code>hmac</code>, <code>hashlib</code> ,完成计算之后再用<code>base64</code>编码成16进制. 网上很多文章都是抄来抄去, 全是2.7版本的. 我亲自去研究了一下python3.6的文档. 两个文档的链接可以从这里找到: <a href="https://docs.python.org/3.6/library/hashlib.html" target="_blank" rel="noopener">hashlib</a>, <a href="https://docs.python.org/3.6/library/hmac.html" target="_blank" rel="noopener">hmac</a>, 最后用<a href="https://docs.python.org/3.6/library/base64.html" target="_blank" rel="noopener">base64</a>来进行编码. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caculateSignature</span><span class="params">(SecretKey, requestString)</span>:</span></span><br><span class="line">    secret = SecretKey.encode(<span class="string">'utf-8'</span>)  <span class="comment">#  秘钥</span></span><br><span class="line">    data = requestString.encode(<span class="string">'utf-8'</span>)  <span class="comment">#  加密数据</span></span><br><span class="line">    signature = base64.b64encode(hmac.new(secret, data, digestmod=hashlib.sha256).digest())</span><br><span class="line">    <span class="keyword">return</span> signature</span><br></pre></td></tr></table></figure>
 
-<h3 id="大小和容量"><a href="#大小和容量" class="headerlink" title="大小和容量"></a>大小和容量</h3><p>Vector本身效率很高，但代价是需要分配出更大的空间。所以相比起一些手动算法，在空间控制上可能没那么理想。</p>
-<p>想要获得当前vector内的元素个数，可以使用<code>size()</code>方法。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//std::vector&lt;int&gt; coll</span></span><br><span class="line">coll.<span class="built_in">size</span>()</span><br></pre></td></tr></table></figure>
+<p>注意, 返回的字符串需要通过一个库解析成http请求想要的形式。</p>
+</li>
+<li><p>查询地区, 获得地区代码</p>
+<p>这里涉及到一个问题, 解析返回的<code>json</code>, 使用的是Python的<code>json</code>包, 文档在<a href="https://docs.python.org/3.6/library/json.html" target="_blank" rel="noopener">这里</a></p>
+</li>
+</ol>
+<h3 id="基本的动态解析逻辑"><a href="#基本的动态解析逻辑" class="headerlink" title="基本的动态解析逻辑"></a>基本的动态解析逻辑</h3><p>​    现在我们已经有一个可以用来计算请求字符串的函数了。换句话说，只要我们拿到想要请求的数据，只需要丢进这个函数里，就可以实现获得请求字符串，再直接调用<code>request</code>进行请求就可以了。</p>
+<p>​    那么现在的问题就是，我们用什么数据实现域名解析呢？</p>
+<p>​    所谓域名解析，就是把域名和IP做一个映射。比如我的<code>vankyle.cn</code>这个域名，需要跟我的网站的服务器的公网IP做一个映射，这样别人访问<code>vankyle.cn</code>这个域名的时候就会把请求导向我的服务器，由服务器实现请求的处理。</p>
+<p>​    其实逻辑很简单，大概像下面这样：</p>
+<ol>
+<li>查询API获取当前的本机IP</li>
+<li>与上次解析的IP做比较</li>
+<li>如果一样，说明IP没有变化，那就什么都不做，休眠起来，下次定时再运行</li>
+<li>如果不一样，说明IP变化了，那就用当前的IP生成一个更改解析的请求，然后调用API实现修改</li>
+<li>完成之后，退出程序休眠起来，过段时间再运行一次</li>
+</ol>
+<p>所以最后的代码是这样的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change_solve</span><span class="params">()</span>:</span></span><br><span class="line">    ip=get_internet_ip()</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">"./ip"</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        old_ip = f.read()</span><br><span class="line">    <span class="keyword">if</span> ip == old_ip:</span><br><span class="line">        print(<span class="string">"noupdate"</span>+<span class="string">"\nnew_ip:"</span>+ip+<span class="string">"\nold_ip:"</span>+old_ip)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        write_to_file(<span class="string">"./ip"</span>,ip)</span><br><span class="line">        result=update_record(ip)</span><br><span class="line">        <span class="keyword">if</span> result==<span class="number">0</span>:</span><br><span class="line">            print(<span class="string">"域名解析更新成功！"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"失败, 返回码:"</span>, result)</span><br></pre></td></tr></table></figure>
 
-<p>可以直接返回一个整数，其大小是这个vector内的元素个数。</p>
-<p>如果这个vector是空的，则<code>coll.empty()</code>会返回<code>true</code>。</p>
-<p>除此之外，还涉及一个问题就是一个vector的容量（Capacity）。特别是如果你需要使用频繁、大规模地使用Vector可以改变长度这个特性的话，尤其需要注意。因为vector在运行过程中可能会重新分配空间，这将导致地址发生变化，如果不做任何措施，原有的引用、指针和迭代器等都可能会失效。而且重新分配内存很耗时间。序偶一你需要好好考虑容量问题。</p>
-<p>​    你可以使用<code>reserve()</code>来保留适当的容量以避免因容量不够而重新分配内存：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">v.reserve(<span class="number">80</span>);<span class="comment">//reserve memroy for 80 elements</span></span><br></pre></td></tr></table></figure>
+<p>这里还涉及到一个获取公网IP的问题, 只需要用request随便找个API请求一下就可以了. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_internet_ip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">with</span> urlopen(<span class="string">'http://www.3322.org/dyndns/getip'</span>) <span class="keyword">as</span> response:</span><br><span class="line">        html = response.read()</span><br><span class="line">        ip = str(html, encoding=<span class="string">'utf-8'</span>).replace(<span class="string">"\n"</span>, <span class="string">""</span>)</span><br><span class="line">    <span class="keyword">return</span> ip</span><br></pre></td></tr></table></figure>
 
-<p>但vector不能像string那样用<code>reserve()</code>来减小容量。vector的容量不能缩减(但长度可以缩减)。如果给<code>reserve()</code>的参数小于当前容量，什么也不会发生。</p>
-<h3 id="几种比较常见的操作"><a href="#几种比较常见的操作" class="headerlink" title="几种比较常见的操作"></a>几种比较常见的操作</h3><p><code>c.empty()</code>: 返回是否为空</p>
-<p><code>c.size()</code>：返回元素个数</p>
-<p><code>c.max_size()</code>发挥元素个数之最大可能量</p>
-<p><code>c.assign(n, elem)</code>: 复制n个elem赋给C</p>
-<p><code>c.assign(begin, end)</code>: 将区间[begin, end)内的元素赋给c</p>
-<p><code>c.assign(initlist)</code>: 用初始值列表给c赋值</p>
-<p><code>c1.swap()</code>或<code>swap(c1, c2)</code>: 置换c1和c2的数据</p>
-<h4 id="访问操作"><a href="#访问操作" class="headerlink" title="访问操作"></a>访问操作</h4><p><code>c[index]</code>(不检查范围)或<code>c.at(index)</code>（检查范围）</p>
-<p><code>c.front()</code>返回首元素</p>
-<p><code>c.back()</code>返回末尾元素</p>
-<h3 id="迭代器相关"><a href="#迭代器相关" class="headerlink" title="迭代器相关"></a>迭代器相关</h3><p><code>c.begin()</code>, <code>c.end()</code>返回一个random-access iterator指向首、尾元素</p>
-<p><code>c.cbegin()</code>, <code>c.cend()</code> 返回一个const ramdom-access iterator指向首、尾元素</p>
-<p><code>c.rbegin()</code>, <code>c.rend()</code>, <code>c.crbegin()</code>, <code>c.crend()</code>返回反向迭代的首尾元素迭代器</p>
-<h4 id="利用迭代器的一些操作"><a href="#利用迭代器的一些操作" class="headerlink" title="利用迭代器的一些操作"></a>利用迭代器的一些操作</h4><p><code>c.push_back(elem)</code>: 附加一个elem拷贝于末尾</p>
-<p><code>c.pop_back()</code>: …上面的逆操作</p>
-<p><code>c.insert()</code>支持以下参数列表：</p>
-<p><code>pos, elem</code></p>
-<p><code>pos, n, elem</code></p>
-<p><code>pos, begin, end</code></p>
-<p><code>pos, initlist</code></p>
-<p><code>c.emplace(pos, args...)</code></p>
-<p><code>e.emplace_back(args...)</code></p>
-<p><code>c.erase(pos)</code>: 移除pos这个iterator上的元素</p>
-<p><code>e.erase(begin, end)</code>： 移除从begin到end中间所有的元素</p>
-<p>所以如果你想移除“与某个值相等”的元素，虽然vector没有直接提供，但是可以通过其他一些辅助函数来实现。比如，你可以通过下面这个语句将所有值为val的元素移除</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;//提供remove函数的声明</span></span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt; coll;</span><br><span class="line">...</span><br><span class="line"><span class="comment">//remove al elements with value val</span></span><br><span class="line">coll.erase(<span class="built_in">remove</span>(coll.<span class="built_in">begin</span>(), coll.<span class="built_in">end</span>(), val), coll.<span class="built_in">end</span>());</span><br></pre></td></tr></table></figure>
-
-<p>如果你想只删除值一样的第一个元素：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt; coll;</span><br><span class="line">...</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">vector</span>&lt;elem&gt;::iterator pos;</span><br><span class="line">pos=<span class="built_in">find</span>(coll.<span class="built_in">begin</span>(), coll.<span class="built_in">end</span>(), val);</span><br><span class="line"><span class="keyword">if</span>(pos!=coll.<span class="built_in">end</span>())</span><br><span class="line">&#123;</span><br><span class="line">    coll.erase(pos);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>###　关于Vector的异常处理</p>
-<p>除非用户自定义了新的异常，或者标准异常（比如<code>bad_alloc</code>), <code>c.at()</code>是唯一一个标准认可的可以抛出异常的函数. 其他的函数，基本都不会抛出异常，甚至标准还保证类似<code>push_back()</code>这样的方法绝对不会抛出异常。</p>
 
       
       <!-- reward -->
@@ -200,14 +186,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://charliej107.github.io/Other/std-vector.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://charliej107.github.io/Experience/Python-%E5%AE%9E%E7%8E%B0%E8%85%BE%E8%AE%AF%E4%BA%91%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.html" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/libstd/" rel="tag">libstd</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cloud/" rel="tag">Cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Internet/" rel="tag">Internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
 
 
     </footer>
@@ -231,19 +217,10 @@
   
   <nav class="article-nav">
     
-      <a href="/Experience/Python-%E5%AE%9E%E7%8E%B0%E8%85%BE%E8%AE%AF%E4%BA%91%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.html" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Python 实现腾讯云动态域名解析
-          
-        </div>
-      </a>
     
-    
-      <a href="/Tutorial/Run-ROS-on-Multiple-Machines.html" class="article-nav-link">
+      <a href="/Other/std-vector.html" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">在多台机器上运行ROS-理论篇</div>
+        <div class="article-nav-title">std::vector</div>
       </a>
     
   </nav>
