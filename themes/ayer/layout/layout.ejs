@@ -1,0 +1,20 @@
+<%- partial('_partial/head') %>
+
+<body>
+  <div id="app">
+    <main class="content">
+      <%- body %>
+      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <div class="to_top">
+        <%- partial('_partial/totop') %>
+      </div>
+    </main>
+      <aside class="sidebar">
+        <%- partial('_partial/sidebar') %>
+      </aside>
+      <%- partial('_partial/modal') %>
+      <%- partial('_partial/after-footer') %>
+  </div>
+</body>
+
+</html>
