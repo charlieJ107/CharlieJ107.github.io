@@ -3,6 +3,10 @@
 <h3 align="center">一个安静且优雅的 Hexo 主题</h3>
 
 <p align="center">
+
+  <img alt="GitHub" src="https://img.shields.io/github/license/Shen-Yu/hexo-theme-ayer">
+   <img alt="platform" src="https://img.shields.io/badge/platform-PC--ios--android-ea5a76.svg">
+  <br>
   <a href="https://travis-ci.org/Shen-Yu/hexo-theme-ayer?branch=master" target="_blank" rel="noopener noreferrer">
     <img alt="travis-ci" src="https://travis-ci.org/Shen-Yu/hexo-theme-ayer.svg?branch=master">
   </a>
@@ -14,13 +18,13 @@
   </a>
   <br>
   <a href="https://github.com/Shen-Yu/hexo-theme-ayer/releases" target="_blank" rel="noopener noreferrer">
-    <img alt="GitHub release" src="https://img.shields.io/badge/release-v1.8-blue.svg">
-  </a>
+    <img alt="GitHub tag (latest by date)" src="https://img.shields.io/github/v/tag/Shen-Yu/hexo-theme-ayer?color=blue">
+  </a> 
  <img alt="language" src="https://img.shields.io/badge/language-ejs--stylus-orange.svg">
   <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener noreferrer">
     <img alt="hexo" src="https://img.shields.io/badge/hexo-%3E%3D3.0-blue.svg">
   </a>
- <img alt="platform" src="https://img.shields.io/badge/platform-PC--ios--android-cc2e8b.svg">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/Shen-Yu/hexo-theme-ayer?color=%23af8ddc">
 </p>
 
 ---
@@ -98,13 +102,15 @@ cover:
   logo: /images/ayer.svg
 
 # ProgressBar  
-progressBar: ture
+progressBar: true
 
 # Article Setting
 # (Use this to excerpt if article is too long：<!--more-->)
 excerpt_link: Read More...
 excerpt_all: false
 
+# Copy code button
+copy_btn: true
 # Share
 share_enable: true
 # If you are not in China, maybe you prefer to set:false
@@ -151,7 +157,19 @@ copyright_type: 2
 search: true
 
 # RSS
+# leave it empty if you dont' need
 rss: /atom.xml
+
+# DarkMode
+darkmode: true
+
+# ClickLove
+clickLove: false
+
+# articleWidth and sidebarWidth
+layout:
+  article_width: 80rem
+  sidebar_width: 8rem
 
 # Comment：1、Valine (recommended)；2、Gitalk
 
@@ -182,9 +200,6 @@ github:
   # (Set false if you don't need)
   url: https://github.com/Shen-Yu/hexo-theme-ayer
 
-# fancybox(Use for gallery, set false if you don't need)
-fancybox: true
-
 # pv&uv statistics
 busuanzi:
   enable: true
@@ -199,8 +214,14 @@ google_analytics: ''
 # Baidu Analytics
 baidu_analytics: ''
 
-# mathjax
+# Mathjax Support
 mathjax: true
+
+# Katex Support
+katex:
+  enable: false # true
+  allpost: true
+  copy_tex: false
 
 # since year
 since: 2019
@@ -296,7 +317,7 @@ Use Tocbot to parse the title tags (h1~h6) in the content and insert the directo
 
 	``` md
 	---
-  toc: false
+  no_toc: true
   ---
 	```
 

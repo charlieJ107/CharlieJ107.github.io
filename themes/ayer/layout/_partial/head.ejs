@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+
+<% if (config.language){ %>
+<html lang="<%= config.language %>">
+<% } else { %>
 <html lang="en">
+<% }%>
 
 <head>
   <meta charset="utf-8" />
@@ -23,9 +28,12 @@
   <% if (theme.favicon){ %>
   <link rel="shortcut icon" href="<%- theme.favicon %>" />
   <% } %>
-  <%- css('css/style') %>
-  <%- js('/js/pace.min.js') %>
-
+  <%- css('dist/main') %>
+  <%- css('https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min') %>
+  <%- css('css/custom') %>
+  <% if (theme.progressBar){ %>
+  <%- js('https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min') %>
+  <% } %>
   <%- partial('google-analytics') %>
   <%- partial('baidu-analytics') %>
 </head>

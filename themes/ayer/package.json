@@ -1,20 +1,32 @@
 {
   "name": "ayer",
   "version": "1.0.0",
-  "description": "ayer 是一个轻量优雅的 Hexo 主题",
-  "main": "index.js",
-  "dependencies": {
-    "stylint": "^2.0.0"
-  },
-  "devDependencies": {},
+  "description": "a clean and elegant theme for hexo.",
   "scripts": {
-    "test": "stylint source/css/style.styl -c .stylintrc"
+    "dev": "parcel serve source-src/main.js -d source/dist",
+    "build": "rimraf source/dist && parcel build source-src/main.js -d source/dist --no-source-maps"
+  },
+  "source": "source-src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shen-Yu/hexo-theme-ayer.git"
   },
   "keywords": [
-    "ayer",
     "hexo",
-    "light"
+    "theme",
+    "blog",
+    "ayer"
   ],
-  "author": "shenyu",
-  "license": "ISC"
+  "author": "Shen-Yu",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/Shen-Yu/hexo-theme-ayer/issues"
+  },
+  "homepage": ".",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0"
+  },
+  "dependencies": {}
 }

@@ -2,18 +2,28 @@
 
 <body>
   <div id="app">
-    <main class="content">
+    <main class="content on">
       <%- body %>
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-    <div class="to_top">
+      <div class="float_btns">
         <%- partial('_partial/totop') %>
       </div>
     </main>
-      <aside class="sidebar">
-        <%- partial('_partial/sidebar') %>
-      </aside>
-      <%- partial('_partial/modal') %>
-      <%- partial('_partial/after-footer') %>
+    <aside class="sidebar on">
+      <%- partial('_partial/sidebar') %>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <%- partial('_partial/modal') %>
+    <%- partial('_partial/after-footer') %>
+
+    <% if (theme.music&&theme.music.enable){ %>
+    <%- partial('_partial/music') %>
+    <% } %>
   </div>
 </body>
 
