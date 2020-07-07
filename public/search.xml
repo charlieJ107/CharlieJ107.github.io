@@ -2027,7 +2027,7 @@
 <p>Anaconda把大多数的东西都给你准备好了, 你打开就能用, 也不用自己折腾python的环境变量, 也不用自己折腾IDE, 也可以少安装很多包(因为它都给你装好了). </p>
 <p>就好像生娃, 人家给你生好了娃, 你来当父母带娃就行. </p>
 <h3 id="为什么我不用Anaconda"><a href="#为什么我不用Anaconda" class="headerlink" title="为什么我不用Anaconda"></a>为什么我不用Anaconda</h3><h4 id="“政治上”的考量"><a href="#“政治上”的考量" class="headerlink" title="“政治上”的考量"></a>“政治上”的考量</h4><p>正如我最开始说, 永远不要依赖于一件事物, 否则你拥有不了自由. </p>
-<p>在这一点上, 我跟<a href="https://www.zhihu.com/question/404402864/answer/1312881774" target="_blank" rel="noopener">@匿蟒的观点</a></p>
+<p>在这一点上, 我跟<a href="https://www.zhihu.com/question/404402864/answer/1312881774" target="_blank" rel="noopener">@匿蟒的观点</a>基本上是一致的。</p>
 <p>中国人最近一年多来在这件事上的教训还不够深刻吗?</p>
 <p>Anaconda是商业公司, 它能停掉你国内的分发镜像, 不能停掉你国内的使用权?</p>
 <p>多少人现在离了Anaconda连环境都不会配, 就好像一堆人离开MATLAB连图都不会画了. </p>
