@@ -2,7 +2,7 @@
 titlie: C++ Iterator
 date: 2020/5/6
 categories: 
-- Tuorial
+- Tutorial
 tags: 
 - C++
 - libstd

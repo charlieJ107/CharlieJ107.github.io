@@ -1,6 +1,7 @@
 ---
 title: 'std::vector'
 date: 2020-03-03 18:50:03
+category: Tutorial
 tags: 
 - C++
 - libstd

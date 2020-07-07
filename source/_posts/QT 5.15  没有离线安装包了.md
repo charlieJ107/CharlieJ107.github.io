@@ -1,6 +1,7 @@
 ---
 title: 'QT 5.15 Windows 离线预编译安装包'
 date: 2020-06-19
+category: Experience
 tags: 
 - C++
 - QT
