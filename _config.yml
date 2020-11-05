@@ -76,8 +76,8 @@ meta_generator: true
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
-## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+## updated_option surpports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -94,19 +94,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: ayer
-#RSS订阅
-plugin:
-  - hexo-generator-feed
-Feed: Atom
-feed: m
-type: atom
-path: atom.xml
-limit: 20
-hub:
-content:
-content_limit: 140
-content_limit_delim: ' '
-order_by: -date	
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
