@@ -4,18 +4,18 @@ menu:
   归档: /archives
   分类: /categories
   标签: /tags
-  旅行: /tags/旅行/
-  摄影: http://shenyu-vip.lofter.com
-  友链: /friends
-  关于我: /2019/about
+  # 旅行: /tags/旅行/
+  # 摄影: http://shenyu-vip.lofter.com
+  # 友链: /friends
+  关于: /about
 
 # 站点次标题和打字动效
 # https://github.com/mattboldt/typed.js
 subtitle:
   enable: true # 是否开启动效
-  text: 面朝大海，春暖花开 # 显示的文字
-  text2: 愿你一生努力，一生被爱 # 滚动播放，如果不需要可以留空
-  text3: 想要的都拥有，得不到的都释怀 # 最多支持三段文字
+  text: 老蒋的技术博客 # 显示的文字
+  text2: 自闭码农, 暴躁老哥 # 滚动播放，如果不需要可以留空
+  text3: 吃好喝好，没有烦恼 # 最多支持三段文字
   startDelay: 0 # 延迟时间
   typeSpeed: 200 # 打字速度
   loop: true # 是否循环
@@ -139,7 +139,7 @@ busuanzi:
 
 # 友盟cnzz统计(url填js代码src链接)
 cnzz:
-  enable: true
+  enable: false
   url: https://s9.cnzz.com/z_stat.php?id=1278069914&web_id=1278069914
 
 # Google Analytics
