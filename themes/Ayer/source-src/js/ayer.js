@@ -151,8 +151,28 @@
     }
   })
 
-  // showThemeInConsole
-  const ayerInfo = '主题不错？⭐star 支持一下 ->';
+  // // showThemeInConsole
+  // const ayerInfo = '主题不错？⭐star 支持一下 ->';
+  // const ayerURL = 'https://github.com/Shen-Yu/hexo-theme-ayer';
+  // const ayerNameStr =
+  //   '\n\n     _ __   _______ _____    \n    / \\ \\ \\ / / ____|  _  \\  \n   / _ \\ \\ V /|  _| | |_) |  \n  / ___ \\ \| | | |___|  _ <   \n /_/   \\_\\ _| |_____|_| \\__\\ \n';
+  // const ayerInfoStyle =
+  //   'background-color: #49b1f5; color: #fff; padding: 8px; font-size: 14px;';
+  // const ayerURLStyle =
+  //   'background-color: #ffbca2; padding: 8px; font-size: 14px;';
+  // const ayerNameStyle = 'background-color: #eaf8ff;';
+
+  // console.log(
+  //   '%c%s%c%s%c%s',
+  //   ayerInfoStyle,
+  //   ayerInfo,
+  //   ayerURLStyle,
+  //   ayerURL,
+  //   ayerNameStyle,
+  //   ayerNameStr
+  // );
+  //已经Star 支持了
+  const ayerInfo = '本站主题使用了沈宇大佬的Ayer主题, 如果你喜欢, 你也可以⭐star 支持一下 ->';
   const ayerURL = 'https://github.com/Shen-Yu/hexo-theme-ayer';
   const ayerNameStr =
     '\n\n     _ __   _______ _____    \n    / \\ \\ \\ / / ____|  _  \\  \n   / _ \\ \\ V /|  _| | |_) |  \n  / ___ \\ \| | | |___|  _ <   \n /_/   \\_\\ _| |_____|_| \\__\\ \n';
@@ -171,6 +191,7 @@
     ayerNameStyle,
     ayerNameStr
   );
+  console.log("By Charlie J")
   document.write('<script type="text/javascript"  src="https://js.users.51.la/20544303.js"></script>');
 })(jQuery);
 
