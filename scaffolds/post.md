@@ -1,5 +1,12 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+categories: # 分类
+- Other
+tags: # 标签
+- Default
 ---
+<!--description--->
+
+
+<!--more-->
