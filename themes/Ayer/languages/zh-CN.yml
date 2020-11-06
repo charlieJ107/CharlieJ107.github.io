@@ -1,0 +1,32 @@
+categories: 分类
+search: 搜索
+tags: 标签
+tagcloud: 标签云
+tweets: 推文
+prev: 上一页
+next: 下一页
+comment: 留言
+archive_a: 归档
+archive_b: 归档：%s
+page: 第 %d 页
+recent_posts: 最新文章
+newer: Newer
+older: Older
+share: 分享
+powered_by: 由 %s 强力驱动
+theme: 主题 - %s
+rss_feed: RSS Feed
+category: Category
+tag: Tag
+site_visitors: 访问人数
+page_views: 浏览次数
+friends: 友情链接
+
+post:
+  word_count: 字数统计
+  read_time: 阅读时长
+  minutes: 分钟
+  reward: 打赏
+  sticky: 置顶
+  copyright_title: 版权声明
+  copyright_content: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。

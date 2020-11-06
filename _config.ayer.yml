@@ -84,9 +84,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: "请我喝杯咖啡吧~"
 # 支付宝二维码图片地址，跟你设置logo的方式一样。比如：/images/alipay.jpg
-alipay: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg
+alipay: https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/alipay.jpg
 # 微信二维码图片地址
-weixin: https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg
+weixin: https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/wechat.png
 
 # 版权声明
 # 版权声明type设定：0-关闭版权声明； 1-文章对应的md文件里有copyright: true属性，才有版权声明； 2-所有文章均有版权声明
@@ -123,8 +123,7 @@ layout:
 github:
   # (关闭请设置为false)
   enable: true
-  url: https://github.com/Shen-Yu/hexo-theme-ayer
-
+  url: https://github.com/CharlieJ107
 # 网易云音乐插件
 music:
   enable: false
@@ -158,10 +157,10 @@ katex:
   copy_tex: false
 
 # 网站成立年份(默认为 2019，若填入年份小于当前年份，则显示为 2018-2019 类似的格式)
-since: 2015
+since: 2019
 
 # 是否显示页脚信息(建议保留)
-pageFooter: true
+pageFooter: false
 
 # ICP备案信息尾部显示
 icp:
@@ -200,12 +199,12 @@ friends_link:
 # 1、Valine[一款快速、简洁且高效的无后端评论系统](https://github.com/xCss/Valine)
 # 启用Valine必须先创建leancloud应用， 获取 id|key 填入即可
 leancloud:
-  enable: true
+  enable: false
   app_id: #
   app_key: #
 # Valine配置
 valine:
-  enable: true # 是否启用
+  enable: false # 是否启用
   avatar: monsterid # 头像样式(https://valine.js.org/avatar.html)
   placeholder: 给我的文章加点评论吧~ # placeholder
 

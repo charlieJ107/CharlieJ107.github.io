@@ -1,0 +1,32 @@
+categories: Catégories
+search: Rechercher
+tags: Mot-clés
+tagcloud: Nuage de mot-clés
+tweets: Tweets
+prev: Précédent
+next: Suivant
+comment: Commentaires
+archive_a: Archives
+archive_b: "Archives: %s"
+page: Page %d
+recent_posts: Articles récents
+newer: Récent
+older: Ancien
+share: Partager
+powered_by: Powered by %s
+theme: Theme - %s
+rss_feed: Flux RSS
+category: Catégorie
+tag: Mot-clé
+site_visitors: Visitors
+page_views: Views
+friends: Mes amis
+
+post:
+  word_count: Nombre de mots
+  read_time: Temps de lecture
+  minutes: min
+  reward: Récompense
+  sticky: Haut
+  copyright_title: Avis de copyright
+  copyright_content: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.
