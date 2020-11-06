@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    我能不能不用Anaconda |  Vankyle
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="Vankyle" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-能不能不用Anaconda"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  我能不能不用Anaconda
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/Thinking/%E8%83%BD%E4%B8%8D%E8%83%BD%E4%B8%8D%E7%94%A8Anaconda.html" class="article-date">
+  <time datetime="2020-07-06T16:00:00.000Z" itemprop="datePublished">2020-07-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Thinking/">Thinking</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">2.4k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">8 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>永远不要只依赖于一件事物，否则你拥有不了自由</p>
+<a id="more"></a>
+<h3 id="事由"><a href="#事由" class="headerlink" title="事由"></a>事由</h3><p>学校的实训课要学python了. </p>
+<p>虽然这是我大一的时候就已经摸了一遍的东西, 但是既然是学校老师教(也只是为了实训项目服务, 并不是系统地教), 那也可以听一听看看, 毕竟身边的绝大多数同学都在各种奇奇怪怪的 “新生研讨课”, “人工智能体验营”之类的东西熏陶下实现了 “精通深度学习算法, 却不知道什么是栈” 的状态, 但总还是要服气, 毕竟人家考试比我好, 上来<code>int i, j, k;</code>后面就不会了挺了半天不知道怎么写栈的人, 数据结构考试还是能考满绩…</p>
+<p>嗨, 吐槽了一堆, 回到正题. 面对一群没有对Python停留在只听说过名字的学生, 老师在群里说叫大家安装好Anaconda. </p>
+<p>我问老师能不能用pip手动配置, 顶多再加个virtualenv, 但老师觉得Andaconda开箱即用, 还是建议用Anaconda. </p>
+<p>我不是对Conda有什么偏见, 但我不认为Anaconda应该成为Python环境的首选项. </p>
+<h3 id="啥是Anaconda"><a href="#啥是Anaconda" class="headerlink" title="啥是Anaconda"></a>啥是Anaconda</h3><blockquote>
+<p>Python是编程语言，官方的Python包含了核心的模块和库，为了完成其他任务，需要安装其他的模块和库。</p>
+<p>Anaconda将Python和许多与科学计算相关的库捆绑在一起，形成了一个方便的科学计算环境，你安装了Ananconda就相当于安装了Python外加这些模块和库。当然Anaconda主要的功能还在于你可以方便进行环境管理。</p>
+<p>除了Anaconda，还有WinPython、Python（X，Y）等，你可以类比Linux系统有Ubuntu、CentOS等发行版，把Anaconda、WinPython理解成不同的Python发行版。</p>
+<p>–Euclid zhihu.com</p>
+</blockquote>
+<p>简单来说, anaconda = python + （NumPy、SciPy 等常用第三方库 ）+  IDE (Jupyter notebook 和Spyder)</p>
+<h3 id="为什么大家都推荐用Anaconda"><a href="#为什么大家都推荐用Anaconda" class="headerlink" title="为什么大家都推荐用Anaconda"></a>为什么大家都推荐用Anaconda</h3><p>说白了就一件事儿, 开箱即用. </p>
+<p>Anaconda把大多数的东西都给你准备好了, 你打开就能用, 也不用自己折腾python的环境变量, 也不用自己折腾IDE, 也可以少安装很多包(因为它都给你装好了). </p>
+<p>就好像生娃, 人家给你生好了娃, 你来当父母带娃就行. </p>
+<h3 id="为什么我不用Anaconda"><a href="#为什么我不用Anaconda" class="headerlink" title="为什么我不用Anaconda"></a>为什么我不用Anaconda</h3><h4 id="“政治上”的考量"><a href="#“政治上”的考量" class="headerlink" title="“政治上”的考量"></a>“政治上”的考量</h4><p>正如我最开始说, 永远不要依赖于一件事物, 否则你拥有不了自由. </p>
+<p>在这一点上, 我跟<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/404402864/answer/1312881774">@匿蟒的观点</a>基本上是一致的。</p>
+<p>中国人最近一年多来在这件事上的教训还不够深刻吗?</p>
+<p>Anaconda是商业公司, 它能停掉你国内的分发镜像, 不能停掉你国内的使用权?</p>
+<p>多少人现在离了Anaconda连环境都不会配, 就好像一堆人离开MATLAB连图都不会画了. </p>
+<p>今年美国对台积电的长臂管辖，意味着把商业基础交给美国的商业公司，是一件可能会炸的事。在一些公司内部做技术选型时，把美国商业技术列入低优先级名单、甚至黑名单，已经是大势所趋。相比之下，非盈利性的基金会<a href="https://link.zhihu.com/?target=https://www.python.org/psf-landing/">PSF</a>更可以信赖。</p>
+<p>这还只是所谓的政治上的考量. </p>
+<h4 id="如果单纯从技术上说"><a href="#如果单纯从技术上说" class="headerlink" title="如果单纯从技术上说"></a>如果单纯从技术上说</h4><p>Anaconda仅仅解决了一些我很容易就能解决的问题, 但是却带来了一堆我不想碰到的问题. </p>
+<p>Anaconda对于包的版本管理落后pip一截, 网络问题国内现在也只有清华这样的学术机构的镜像能用, 原先能用的腾讯阿里的源都挂了. 即使是有了清华的镜像, 从零配置原生的Python环境完毕，这个522MB的安装包（以Anaconda3-2020.02-Linux-x86_64.sh为例）都还没下载完。（这个安装包在解压、安装后，总大小3.4GB。）</p>
+<h4 id="工程发布上的考虑"><a href="#工程发布上的考虑" class="headerlink" title="工程发布上的考虑"></a>工程发布上的考虑</h4><p>从一家商业公司的角度来考虑，既不能自建镜像，又不能接受团队的低效，难道舔着脸蹭tuna？从合规方向考虑，公司应该出钱购买Team Edition或Enterprise Edition。价格嘛，$10,000起，还有其它单次付费的情况。</p>
+<p>原生Python根本不要钱，只需要内部培训一下。而且国内PyPI镜像满天飞，合法合规。</p>
+<p>如果考虑到发布, 更要看看Anaconda有多臃肿. </p>
+<p>在大多数Python应用所有环境总共只有100MB以内（包括系统包、Python运行环境与应用本身）的情况下，一个光Python运行环境就有3.4G的东西，真的大到不能忍。从两个角度来解释吧：</p>
+<ol>
+<li>作为一家大公司，以Docker镜像方式发布产品。每次产品上线、扩容时，需要额外复制这么大的无用文件，空耗空间与时间，影响发布效率。我怎么和上头吹，我的秒级发布、秒级回退、秒级扩容？而且还要为这么多组件的安全、维护、开源协议操心。</li>
+<li>作为一个小开发者，买个1核1G的服务器，自带40G系统硬盘。由于没什么点击量，因此一台服务器本来预备serve几十个服务，基础镜像也往往挑选小而冷的Alpine。这个Anaconda一上来就是3.4G，小家小业折腾不起啊！</li>
+</ol>
+<h3 id="我不用Anaconda-并不是因为它不好"><a href="#我不用Anaconda-并不是因为它不好" class="headerlink" title="我不用Anaconda, 并不是因为它不好"></a>我不用Anaconda, 并不是因为它不好</h3><blockquote>
+<p><a href="https://link.zhihu.com/?target=https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>是<a href="https://link.zhihu.com/?target=https://www.anaconda.com/">Anaconda</a>的子集，仅包含基本的Python运行环境与conda。</p>
+<p>conda是一个了不起的创新！它结合了包管理pip与虚拟环境virtualenv等技术，不仅在客户端简化了操作，还在服务端再造了PyPI的体系。</p>
+<p>Python的软件包，大概包含纯Python（.py）、Python混合C/C++（py+so）与纯二进制（so）三大类，都支持import后直接使用。因此，PyPI支持的egg、wheel包，在设计时就考虑了对so的发布支持，即使它很复杂，必须区分架构和系统。</p>
+<p>比如，<a href="https://link.zhihu.com/?target=https://pypi.org/project/numpy/%23files">numpy</a>的一个版本就通常包含近20个wheel包。这里列几个有代表性的发布件，大家可以通过文件名感受一下。</p>
+<ul>
+<li>numpy-1.19.0-cp36-cp36m-manylinux2010_x86_64.whl</li>
+<li>numpy-1.19.0-cp37-cp37m-manylinux2014_aarch64.whl</li>
+<li>numpy-1.19.0-cp38-cp38-win_amd64.whl</li>
+<li>numpy-1.19.0-pp36-pypy36_pp73-manylinux2010_x86_64.whl</li>
+</ul>
+<p>有一类包，本身是三大类中的某一类（总类别已经变成了2×3=6种了），但发布时只有源码包，<strong>安装时</strong>需要临时编译其中的C/C++部分代码。这类包的问题是，在pip install时可能出现各式各样的crash。有时候，你安装的包本身是正常包，但依赖中有这类包，也会在安装时导致crash。</p>
+<p>还有一类，本身是三大类中的某一类，发布时可能只有源码包，或像numpy一样做好了大多数情况下的wheel包（总类别已经变成了2×2×3=12种），但<strong>运行时</strong>需要依赖某些额外的系统组件（so）。因此，光有pip不够，还需动用系统包管理器，比如apt、yum等，才能完整准备某些运行环境。否则，在运行到某些功能时，就会crash，比如uwsgi、graphviz等。</p>
+<p>所以，在上面12种分类中，只有3种是pip能完美支持的，其它9种都需要系统给与某种程度的配合，比如安装gcc、python3-dev等。conda做了比较完善的编译包，甚至包括某些运行时依赖的组件，比如<a href="https://link.zhihu.com/?target=https://anaconda.org/conda-forge/ffmpeg">ffmpeg</a>。用户执行conda install就够了，不需要再考虑系统状态。这一点比pip更进一步，非常优秀。</p>
+<p>尽管如此，对我来说也并非不可替代。pip在设计时就选择了与apt这些系统包管理器共生，是因为系统包管理器更完善。一家<a href="https://link.zhihu.com/?target=https://www.anaconda.com/">Anaconda</a>，在完备性上是不足以与任何一个Linux发行版竞争的。它只能保证数据科学相关的包，出了这个圈依然要动用系统包管理器。</p>
+<p>前面说了，我是一个Python开发者。仅仅有数据科学这部分，对我来说是不够的。在数据分析师、AI工程师那里，conda确实完胜了pip，他们只需要用conda；但在我这里，conda还不够完备。在conda+pip+apt和pip +apt面前，我选择了pip+apt，反而减小了环境准备的复杂度。</p>
+<p>– @匿蟒 zhihu.com</p>
+</blockquote>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>还是那句, 我不用Anaconda, 并不是因为它不好, 而是它不适合我. pip也好, Anaconda也罢, 都只是工具. 工具 (在大多数值得比较的场合) 没有好坏之分, 只有适合还是不适合. 我用pip, 可以让环境掌握在我手里, 可以不用被Anaconda流氓般地占用我宝贵的磁盘空间和内存空间. 并且, 在不会因为不用Anaconda给我带来困扰的情况下, 避免了用Anaconda带来的问题, 这才是我不用Anaconda的原因. </p>
+<p>如果你跟我一样, 有工程和发布上的需求, 享受这种自己能够把控的感觉, 或者, 仅仅是因为你已经熟悉了pip, 而Anaconda还需要另外再折腾一套你陌生的东西, 你大可不必因为一些他人的推荐而逼迫自己使用Anaconda, 毕竟永远不要依赖于一件事物, 否则你拥有不了自由. </p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>License： </strong>
+          
+          <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://charliej107.github.io/Thinking/%E8%83%BD%E4%B8%8D%E8%83%BD%E4%B8%8D%E7%94%A8Anaconda.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Anaconda/" rel="tag">Anaconda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Config/" rel="tag">Config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pip/" rel="tag">pip</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/Experience/C++%E7%9A%84%E8%99%9A%E6%96%B9%E6%B3%95.html" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            C++虚方法
+          
+        </div>
+      </a>
+    
+    
+      <a href="/Experience/QT%205.15%20%20%E6%B2%A1%E6%9C%89%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85%E4%BA%86.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">QT 5.15 Windows 离线预编译安装包</div>
+      </a>
+    
+  </nav>
+
+  
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2020
+        <i class="ri-heart-fill heart_icon"></i> Charlie J
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Vankyle"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>

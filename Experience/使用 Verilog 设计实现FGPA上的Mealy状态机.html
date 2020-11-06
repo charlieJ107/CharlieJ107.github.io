@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn">
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    使用 Verilog 设计实现FGPA上的Mealy状态机 |  Vankyle
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="Vankyle" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-使用 Verilog 设计实现FGPA上的Mealy状态机"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  使用 Verilog 设计实现FGPA上的Mealy状态机
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/Experience/%E4%BD%BF%E7%94%A8%20Verilog%20%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0FGPA%E4%B8%8A%E7%9A%84Mealy%E7%8A%B6%E6%80%81%E6%9C%BA.html" class="article-date">
+  <time datetime="2020-05-15T16:00:00.000Z" itemprop="datePublished">2020-05-16</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Experience/">Experience</a>
+  </div>
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">868</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">4 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>Mealy状态机的设计方法</p>
+<a id="more"></a>
+
+<p>​    用Mealy状态机设计1101序列检测器的状态转换图如图所示:</p>
+<p>![Mealy状态机状态转换图]</p>
+<p>Mealy状态机设计1101序列检测的Verilog代码:</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> seqdetb(</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clk,</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clr,</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> din,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span> dout</span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">1</span>:<span class="number">0</span>] present_state, next_state;</span><br><span class="line">    <span class="keyword">parameter</span> S0=<span class="number">3&#x27;b00</span>, S1=<span class="number">3&#x27;b01</span>,S2=<span class="number">3&#x27;b10</span>,S3=<span class="number">3&#x27;b11</span>;</span><br><span class="line">    <span class="comment">//状态寄存器</span></span><br><span class="line">    <span class="keyword">always</span> @ (<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">posedge</span> clr)</span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            <span class="keyword">if</span> (clr==<span class="number">1</span>)</span><br><span class="line">                present_state &lt;= S0;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                present_state &lt;= next_state;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="comment">//C1模块</span></span><br><span class="line">        <span class="keyword">always</span>@ (*)</span><br><span class="line">            <span class="keyword">begin</span></span><br><span class="line">                <span class="keyword">case</span>(present_state)</span><br><span class="line">                    S0: <span class="keyword">if</span>(din == <span class="number">1</span>)</span><br><span class="line">                            next_state &lt;= S1;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            next_state &lt;= S0;</span><br><span class="line">                    S1: <span class="keyword">if</span>(din == <span class="number">1</span>)</span><br><span class="line">                            next_state &lt;= S2;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            next_state &lt;= S0;</span><br><span class="line">                    S2: <span class="keyword">if</span>(din == <span class="number">0</span>)</span><br><span class="line">                            next_state &lt;= S3;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            next_state &lt;= S2;</span><br><span class="line">                    S3: <span class="keyword">if</span>(din == <span class="number">1</span>)</span><br><span class="line">                            next_state &lt;= S1;</span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            next_state &lt;= S0;</span><br><span class="line">                    <span class="keyword">default</span></span><br><span class="line">                        next_state &lt;= S0;</span><br><span class="line">                <span class="keyword">endcase</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//C2模块</span></span><br><span class="line">        <span class="keyword">always</span> @ (<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">posedge</span> clr)</span><br><span class="line">            <span class="keyword">begin</span></span><br><span class="line">                <span class="keyword">if</span>(clr==<span class="number">1</span>)</span><br><span class="line">                    dout &lt;= <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>( (present_state == S3) &amp;&amp; (din == <span class="number">1</span>))</span><br><span class="line">                    dout &lt;=<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dout &lt;= <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">end</span>    </span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>针对这个设计代码, 可以编写如下的测试文件用于行为仿真:</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> seqdetb_test(</span><br><span class="line"></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">reg</span> clk;</span><br><span class="line">    <span class="keyword">reg</span> clr;</span><br><span class="line">    <span class="keyword">reg</span> din;</span><br><span class="line">    <span class="keyword">wire</span> dout;</span><br><span class="line">    <span class="keyword">parameter</span> period = <span class="number">100</span>;</span><br><span class="line">    seqdetb seqdetb1(</span><br><span class="line">    <span class="variable">.clk</span>(clk),</span><br><span class="line">    <span class="variable">.clr</span>(clr),</span><br><span class="line">    <span class="variable">.din</span>(din),</span><br><span class="line">    <span class="variable">.dout</span>(dout)</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">wire</span> present_state;</span><br><span class="line">    <span class="keyword">wire</span> next_state;</span><br><span class="line">    <span class="keyword">initial</span> </span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            clk = <span class="number">0</span>;</span><br><span class="line">            clr = <span class="number">1</span>;</span><br><span class="line">            din = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">always</span> <span class="variable">#(period/2)</span> </span><br><span class="line">        <span class="keyword">begin</span> </span><br><span class="line">            clk = ~clk;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">always</span> <span class="variable">#(period*2)</span></span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            din=~din;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">always</span> #period</span><br><span class="line">        <span class="keyword">begin</span> </span><br><span class="line">            clr=~clr;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>仿真获得的测试波形如下: </p>
+<p><img src="https://image-vankyle-1257862518.cos.ap-chongqing.myqcloud.com/github/seqdetb_test.png" alt="seqdetb_test"></p>
+<p>对工程进行综合后, 可以成功生成BitStream文件.</p>
+<h3 id="结合状态机实现交通信号灯"><a href="#结合状态机实现交通信号灯" class="headerlink" title="结合状态机实现交通信号灯"></a>结合状态机实现交通信号灯</h3><p>通过状态机来实现一个交通信号灯, 状态转换表如下: </p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>南北方向</th>
+<th>东西方向</th>
+<th>延迟/s</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>绿</td>
+<td>红</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>黄</td>
+<td>红</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>红</td>
+<td>红</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>红</td>
+<td>绿</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>红</td>
+<td>黄</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>红</td>
+<td>红</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>信号灯的实现程序如下: </p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> traffic(</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clk_3Hz,</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clr,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span> [<span class="number">5</span>:<span class="number">0</span>] lights</span><br><span class="line">    );</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">2</span>:<span class="number">0</span>] state;</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">3</span>:<span class="number">0</span>] count;</span><br><span class="line">    <span class="keyword">parameter</span> S0=<span class="number">3&#x27;b000</span>, S1=<span class="number">3&#x27;b001</span>, S2=<span class="number">3&#x27;b010</span>,<span class="comment">//states</span></span><br><span class="line">                S3=<span class="number">3&#x27;b011</span>, S4=<span class="number">3&#x27;b100</span>, S5=<span class="number">3&#x27;b101</span>;</span><br><span class="line">    <span class="keyword">parameter</span> SEC5=<span class="number">4&#x27;b1110</span>, SEC1=<span class="number">4&#x27;b0010</span>;</span><br><span class="line">    <span class="keyword">always</span> @ (<span class="keyword">posedge</span> clk_3Hz <span class="keyword">or</span> <span class="keyword">posedge</span> clr)</span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            <span class="keyword">if</span>(clr==<span class="number">1</span>)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                    state &lt;= S0;</span><br><span class="line">                    count &lt;= <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">case</span>(state)</span><br><span class="line">                    S0:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC5)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S0;</span><br><span class="line">                                count &lt;= count +<span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S1;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    S1:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC1)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;=S1;</span><br><span class="line">                                count &lt;= count +<span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S2;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    S2:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC1)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S2;</span><br><span class="line">                                count &lt;= count +<span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;=  S3;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    S3:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC1)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S3;</span><br><span class="line">                                count &lt;= count +<span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;=  S4;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    S4:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC1)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S4;</span><br><span class="line">                                count &lt;= count +<span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;=  S5;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    S5:</span><br><span class="line">                        <span class="keyword">if</span>(count&lt;SEC1)</span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;= S5;</span><br><span class="line">                                count &lt;= count + <span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span></span><br><span class="line">                            <span class="keyword">begin</span></span><br><span class="line">                                state &lt;=  S0;</span><br><span class="line">                                count &lt;= <span class="number">0</span>;</span><br><span class="line">                            <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">default</span> state &lt;= S0;</span><br><span class="line">                    <span class="keyword">endcase</span></span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">always</span> @(*)</span><br><span class="line">                <span class="keyword">begin</span></span><br><span class="line">                    <span class="keyword">case</span>(state)</span><br><span class="line">                        S0: lights=<span class="number">6&#x27;b100001</span>;</span><br><span class="line">                        S1: lights=<span class="number">6&#x27;b100010</span>;</span><br><span class="line">                        S2: lights=<span class="number">6&#x27;b100100</span>;</span><br><span class="line">                        S3: lights=<span class="number">6&#x27;b001100</span>;</span><br><span class="line">                        S4: lights=<span class="number">6&#x27;b010100</span>;</span><br><span class="line">                        S5: lights=<span class="number">6&#x27;b100100</span>;</span><br><span class="line">                        <span class="keyword">default</span> lights=<span class="number">6&#x27;b100001</span>;</span><br><span class="line">                    <span class="keyword">endcase</span></span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>对信号灯这个部分进行仿真, 编写的仿真测试文件如下: </p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> traffic_test(</span><br><span class="line"></span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">reg</span> clk_3Hz;</span><br><span class="line">    <span class="keyword">reg</span> clr;</span><br><span class="line">    <span class="keyword">wire</span> [<span class="number">5</span>:<span class="number">0</span>] lights;</span><br><span class="line">    traffic theTraffic(</span><br><span class="line">        <span class="variable">.clk_3Hz</span>(clk_3Hz),</span><br><span class="line">        <span class="variable">.clr</span>(clr),</span><br><span class="line">        <span class="variable">.lights</span>(lights)</span><br><span class="line">        );</span><br><span class="line">    <span class="keyword">parameter</span> period = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">initial</span> </span><br><span class="line">        <span class="keyword">begin</span> </span><br><span class="line">        clk_3Hz=<span class="number">0</span>;</span><br><span class="line">        clr=<span class="number">1</span>;</span><br><span class="line">        #<span class="number">10</span>;</span><br><span class="line">        clr=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">always</span> # (period/<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            clk_3Hz=~clk_3Hz;</span><br><span class="line">        <span class="keyword">end</span> </span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image-vankyle-1257862518.cos.ap-chongqing.myqcloud.com/github/traffic_test.png" alt="traffic_test"></p>
+<p>为了制造3Hz的时钟信号, 需要实现一个分频器</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> clkdiv(</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clk_100MHz,</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clr,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">wire</span> clk_3Hz</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">reg</span> [<span class="number">24</span>:<span class="number">0</span>] q;</span><br><span class="line">    <span class="comment">//25bit counter</span></span><br><span class="line">    <span class="keyword">always</span> @ (<span class="keyword">posedge</span> clk_100MHz <span class="keyword">or</span> <span class="keyword">posedge</span> clr)</span><br><span class="line">        <span class="keyword">begin</span></span><br><span class="line">            <span class="keyword">if</span>(clr==<span class="number">1</span>)</span><br><span class="line">                q &lt;= <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q &lt;= q + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">assign</span> clk_3Hz=q[<span class="number">24</span>] ;<span class="comment">//3Hz</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>最后用一个顶层模块将分频器和交通灯两个模块封装起来</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">`<span class="meta-keyword">timescale</span> 1ns / 1ps</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> traffic_lights_top(</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> clk_100MHz,</span><br><span class="line">    <span class="keyword">input</span> <span class="keyword">wire</span> [<span class="number">4</span>:<span class="number">4</span>] s,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">wire</span> [<span class="number">5</span>:<span class="number">0</span>] ld</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">wire</span> clr, clk_3Hz;</span><br><span class="line">    <span class="keyword">assign</span> clr=s;</span><br><span class="line">    clkdiv U1(<span class="variable">.clk_100MHz</span>(clk_100MHz),</span><br><span class="line">                <span class="variable">.clr</span>(clr),</span><br><span class="line">                <span class="variable">.clk_3Hz</span>(clk_3Hz)</span><br><span class="line">              );</span><br><span class="line">    traffic U2(<span class="variable">.clk_3Hz</span>(clk_3Hz),</span><br><span class="line">                <span class="variable">.clr</span>(clr),</span><br><span class="line">                <span class="variable">.lights</span>(ld)</span><br><span class="line">              );    </span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>经过综合, 可以生成BitStream文件</p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>License： </strong>
+          
+          <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://charliej107.github.io/Experience/%E4%BD%BF%E7%94%A8%20Verilog%20%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0FGPA%E4%B8%8A%E7%9A%84Mealy%E7%8A%B6%E6%80%81%E6%9C%BA.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FGPA/" rel="tag">FGPA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Verilog/" rel="tag">Verilog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vivado/" rel="tag">Vivado</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/Repost/Ubuntu%20%E5%AE%89%E8%A3%85%20VirtualBox%20%E5%90%AF%E7%94%A8%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%A1%88.html" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            [Repost] Ubuntu 安装 VirtualBox 启用安全启动的方案
+          
+        </div>
+      </a>
+    
+    
+      <a href="/Repost/CVonline%20Image%20Databases.html" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">[Repost] CVonline: Image Databases</div>
+      </a>
+    
+  </nav>
+
+  
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2020
+        <i class="ri-heart-fill heart_icon"></i> Charlie J
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="Vankyle"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://data-vankyle-1257862518.cos.ap-shanghai.myqcloud.com/image/Blog/wechat.png">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+</body>
+
+</html>
