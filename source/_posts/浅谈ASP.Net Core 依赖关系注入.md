@@ -1,5 +1,5 @@
 ---
-titlie: 浅谈ASP.Net Core 依赖关系注入
+title: 浅谈ASP.Net Core 依赖关系注入
 date: 2020/5/6
 categories: 
 - Tutorial
